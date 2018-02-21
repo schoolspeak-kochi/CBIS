@@ -87,6 +87,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DataExchangeApi.cs" />
+    <Compile Include="Controllers\InstitutionApi.cs" />
+    <Compile Include="Controllers\ProductApi.cs" />
+    <Compile Include="Controllers\ProductEndpointsApi.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -104,8 +108,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CB.IntegrationService.ApiModels\CB.IntegrationService.ApiModels.csproj">
+      <Project>{b6a4829d-35a6-427c-8b6b-04f31055af87}</Project>
+      <Name>CB.IntegrationService.ApiModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

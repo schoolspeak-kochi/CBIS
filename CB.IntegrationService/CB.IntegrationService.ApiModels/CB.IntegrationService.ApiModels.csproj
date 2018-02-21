@@ -30,8 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,7 +46,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AckNotification.cs" />
+    <Compile Include="Address.cs" />
+    <Compile Include="ErrorNotificationRequest.cs" />
+    <Compile Include="ErrorResponse.cs" />
+    <Compile Include="FilterPolicy.cs" />
+    <Compile Include="Filters.cs" />
+    <Compile Include="GetQueryRequest.cs" />
+    <Compile Include="GetQueryResponse.cs" />
+    <Compile Include="GetServiceResponse.cs" />
+    <Compile Include="NotificationAcknowledgeRequest.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="ProductNotificationRequest.cs" />
+    <Compile Include="ProductServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublishEventRequest.cs" />
+    <Compile Include="PublishEventResponse.cs" />
+    <Compile Include="QueryInformation.cs" />
+    <Compile Include="QueryPayload.cs" />
+    <Compile Include="RegisterInstitutionRequest.cs" />
+    <Compile Include="RegisterInstitutionResponse.cs" />
+    <Compile Include="RegisterProductResponse.cs" />
+    <Compile Include="SubscribeEventRequest.cs" />
+    <Compile Include="SubscribeEventResponse.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
