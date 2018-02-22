@@ -32,3 +32,6 @@ publish/
 
 # Publish Web Output
 *.Publish.xml
+
+# Remainings from resolvings conflicts in Source Control
+*.orig
