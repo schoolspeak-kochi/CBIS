@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\Enums.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\MembersCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -40,14 +40,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\AwsCredentials.cs" />
+    <Compile Include="Data\AwsCredentialsMaster.cs" />
+    <Compile Include="Data\DatabaseCredentials.cs" />
     <Compile Include="EventInformationDAL.cs" />
     <Compile Include="ProductInformationDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublishedEventInformationDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CB.IntegrationService.Models\CB.IntegrationService.Models.csproj">
       <Project>{3def2500-c61c-4303-a8aa-d293dce8e9bb}</Project>
       <Name>CB.IntegrationService.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CB.IntegrationService.StandardDataSet\CB.IntegrationService.StandardDataSet.csproj">
+      <Project>{446C6853-BB31-4545-82FB-25383FFC2E61}</Project>
+      <Name>CB.IntegrationService.StandardDataSet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CB.IntegrationService.Utils\CB.IntegrationService.Utils.csproj">
+      <Project>{842821CE-9432-4D78-8F74-6F5ADFA7026B}</Project>
+      <Name>CB.IntegrationService.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

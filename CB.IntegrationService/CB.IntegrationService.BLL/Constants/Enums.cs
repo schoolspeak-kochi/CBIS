@@ -19,11 +19,5 @@ namespace CB.IntegrationService.BLL.Constants
         Schoolyard = 8
     }
 
-    public enum StandardDataModels
-    {
-        Member = 0,
-        Enrollment = 1,
-        Default = 2,
-        None
-    }
+    
 }

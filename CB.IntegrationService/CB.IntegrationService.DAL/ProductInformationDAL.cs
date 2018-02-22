@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CB.IntegrationService.Models.Models;
+using CB.IntegrationService.Models;
 using System.Data.SqlClient;
-using CB.IntegrationService.Models.Data;
 using System.Data;
+using CB.IntegrationService.DAL.Data;
 
 namespace CB.IntegrationService.DAL
 {

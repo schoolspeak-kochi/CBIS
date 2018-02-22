@@ -119,6 +119,22 @@
       <Project>{a16e56c1-fb95-4002-9590-ca010742570e}</Project>
       <Name>CB.IntegrationService.BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CB.IntegrationService.DAL\CB.IntegrationService.DAL.csproj">
+      <Project>{7c5c0bc5-ebe4-48e7-8e6b-82f573ca795c}</Project>
+      <Name>CB.IntegrationService.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CB.IntegrationService.Models\CB.IntegrationService.Models.csproj">
+      <Project>{3DEF2500-C61C-4303-A8AA-D293DCE8E9BB}</Project>
+      <Name>CB.IntegrationService.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CB.IntegrationService.StandardDataSet\CB.IntegrationService.StandardDataSet.csproj">
+      <Project>{446C6853-BB31-4545-82FB-25383FFC2E61}</Project>
+      <Name>CB.IntegrationService.StandardDataSet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CB.IntegrationService.Utils\CB.IntegrationService.Utils.csproj">
+      <Project>{842821CE-9432-4D78-8F74-6F5ADFA7026B}</Project>
+      <Name>CB.IntegrationService.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CB.IntegrationService.Models.Models
+namespace CB.IntegrationService.Models
 {
     public class ProductInformation
     {

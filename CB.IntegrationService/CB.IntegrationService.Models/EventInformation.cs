@@ -1,4 +1,4 @@
-﻿using CB.IntegrationService.BLL.Constants;
+﻿using CB.IntegrationService.StandardDataSet.Constants;
 using System;
 using System.Collections.Generic;
 using System.Linq;

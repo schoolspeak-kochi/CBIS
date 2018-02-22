@@ -25,6 +25,14 @@ using System;
 using System.Web.Http;
 using CB.IntegrationService.BLL.Utils;
 using CB.IntegrationService.BLL.Models;
+using CB.IntegrationService.DAL;
+using CB.IntegrationService.BLL.Constants;
+using CB.IntegrationService.StandardDataSet.Models;
+using CB.IntegrationService.Utils;
+using CB.IntegrationService.Models;
+using CB.IntegrationService.Models.Constants;
+using System.Linq;
+using CB.IntegrationService.StandardDataSet.Constants;
 
 namespace EducationBrands.IntegrationService.Api.Controllers
 {
@@ -81,7 +89,7 @@ namespace EducationBrands.IntegrationService.Api.Controllers
             }
 
             // Validate requested event from DB
-            EventInformation eventInfo = new EventInformationDAC().GetEventInformationByName(publishEventRequest.EventName);
+            EventInformation eventInfo = new EventInformationDAL().GetEventInformationByName(publishEventRequest.EventName);
 
             // Notify the client if the requested event not supported
             if (eventInfo == null)
@@ -89,8 +97,8 @@ namespace EducationBrands.IntegrationService.Api.Controllers
                 return BadRequest("Unsupported event. Please request for a valid event");
             }
 
-            IIntegrationModel integrationModel = null;
-            StandardDataModels MessageType = eventInfo.ModelType;
+            // IIntegrationModel integrationModel = null;
+            CB.IntegrationService.StandardDataSet.Constants.StandardDataModels MessageType = eventInfo.ModelType;
             try
             {
 
@@ -102,8 +110,8 @@ namespace EducationBrands.IntegrationService.Api.Controllers
 
                     case StandardDataModels.Default:
                     default:
-                        MessageType = StandardDataModels.Default;
-                        integrationModel = (IIntegrationModel)JsonHelper.DeSerialize<EBDefaultModel>(publishEventRequest.ToString());
+                       // MessageType = StandardDataModels.Default;
+                        //integrationModel = (IIntegrationModel)JsonHelper.DeSerialize<EBDefaultModel>(publishEventRequest.ToString());
                         break;
                 }
             }
@@ -119,7 +127,7 @@ namespace EducationBrands.IntegrationService.Api.Controllers
             //    return BadRequest("Unsupported event model, please use a standard data model to map your model.");
             //}
 
-            ProductInformation productInformation = new ProductInformationDAC().GetProductInformationById(Request.Headers.GetValues(AuthenticationHeaders.PRODUCT_ID).FirstOrDefault().ToString().Trim());
+            ProductInformation productInformation = new ProductInformationDAL().GetProductInformationById(Request.Headers.GetValues(AuthenticationHeaders.PRODUCT_ID).FirstOrDefault().ToString().Trim());
             if (productInformation == null)
             {
                 Unauthorized();
@@ -130,7 +138,7 @@ namespace EducationBrands.IntegrationService.Api.Controllers
             {
                 PublishingProductName = productInformation.ProductName,
                 InstitutionName = publishEventRequest.InstitutionName,
-                EbInstitutionId = publishEventRequest.EBInstitutionId,
+                EbInstitutionId = publishEventRequest.EbInstitutionId,
                 EventName = publishEventRequest.EventName,
                 MessageType = MessageType.ToString(),
                 AcknowledgementRequired = publishEventRequest.AcknowledgementRequired,

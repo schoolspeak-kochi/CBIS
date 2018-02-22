@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CB.IntegrationService.Models.Data
+namespace CB.IntegrationService.DAL.Data
 {
     public class DatabaseCredentials
     {

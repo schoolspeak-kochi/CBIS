@@ -40,10 +40,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\DatabaseCredentials.cs" />
-    <Compile Include="Models\Constants\AuthenticationHeaders.cs" />
-    <Compile Include="Models\ProductInformation.cs" />
+    <Compile Include="Constants\AuthenticationHeaders.cs" />
+    <Compile Include="EmailPayload.cs" />
+    <Compile Include="EventDeliveryInformation.cs" />
+    <Compile Include="EventInformation.cs" />
+    <Compile Include="ProductInformation.cs" />
+    <Compile Include="PublishedEventInformation.cs" />
+    <Compile Include="QueuedEventInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CB.IntegrationService.StandardDataSet\CB.IntegrationService.StandardDataSet.csproj">
+      <Project>{446C6853-BB31-4545-82FB-25383FFC2E61}</Project>
+      <Name>CB.IntegrationService.StandardDataSet</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using CB.IntegrationService.Models.Constants;
-using CB.IntegrationService.Models.Models;
+using CB.IntegrationService.Models;
 using CB.IntegrationService.DAL;
 
 namespace CB.IntegrationService.BLL.Utils
