@@ -24,6 +24,7 @@ using CB.IntegrationService.ApiModels;
 using System;
 using System.Web.Http;
 using CB.IntegrationService.BLL.Utils;
+using CB.IntegrationService.BLL.Models;
 
 namespace EducationBrands.IntegrationService.Api.Controllers
 {
