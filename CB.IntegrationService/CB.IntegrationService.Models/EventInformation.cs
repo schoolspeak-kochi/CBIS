@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CB.IntegrationService.BLL.Models
+namespace CB.IntegrationService.Models
 {
     public class EventInformation
     {

@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CB.IntegrationService.BLL.Models;
+using CB.IntegrationService.Models;
 using System.Data;
 using CB.IntegrationService.DAL.Data;
 using CB.IntegrationService.StandardDataSet.Constants;

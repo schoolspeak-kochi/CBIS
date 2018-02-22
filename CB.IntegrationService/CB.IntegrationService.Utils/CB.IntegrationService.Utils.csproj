@@ -56,11 +56,5 @@
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.SimpleEmail.3.3.6.1\analyzers\dotnet\cs\AWSSDK.SimpleEmail.CodeAnalysis.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CB.IntegrationService.Models\CB.IntegrationService.Models.csproj">
-      <Project>{3DEF2500-C61C-4303-A8AA-D293DCE8E9BB}</Project>
-      <Name>CB.IntegrationService.Models</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

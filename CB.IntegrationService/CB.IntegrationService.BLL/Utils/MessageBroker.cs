@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CB.IntegrationService.DAL;
-using CB.IntegrationService.BLL.Models;
 using CB.IntegrationService.Utils;
 using CB.IntegrationService.DAL.Data;
 using Amazon.SQS.Model;

@@ -24,7 +24,6 @@ using CB.IntegrationService.ApiModels;
 using System;
 using System.Web.Http;
 using CB.IntegrationService.BLL.Utils;
-using CB.IntegrationService.BLL.Models;
 using CB.IntegrationService.DAL;
 using CB.IntegrationService.BLL.Constants;
 using CB.IntegrationService.StandardDataSet.Models;
