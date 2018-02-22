@@ -87,10 +87,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\DataExchangeApi.cs" />
-    <Compile Include="Controllers\InstitutionApi.cs" />
-    <Compile Include="Controllers\ProductApi.cs" />
-    <Compile Include="Controllers\ProductEndpointsApi.cs" />
+    <Compile Include="Controllers\DataExchangeController.cs" />
+    <Compile Include="Controllers\InstitutionController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProductEndpointsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -114,6 +114,10 @@
     <ProjectReference Include="..\CB.IntegrationService.ApiModels\CB.IntegrationService.ApiModels.csproj">
       <Project>{b6a4829d-35a6-427c-8b6b-04f31055af87}</Project>
       <Name>CB.IntegrationService.ApiModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CB.IntegrationService.BLL\CB.IntegrationService.BLL.csproj">
+      <Project>{a16e56c1-fb95-4002-9590-ca010742570e}</Project>
+      <Name>CB.IntegrationService.BLL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
