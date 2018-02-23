@@ -50,7 +50,7 @@ namespace CB.IntegrationService.DAL
         }
         public PublishedEventInformation GetPublishedEventInformation(long tokenId)
         {
-            return GetPublishedEventInformation(tokenId);
+            return GetPublishedEventInformation(tokenId.ToString());
         }
         public PublishedEventInformation GetPublishedEventInformation(string tokenId)
         {
