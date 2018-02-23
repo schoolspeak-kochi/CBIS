@@ -12,6 +12,11 @@ namespace CB.IntegrationService.DAL
 {
     public class ProductInformationDAL
     {
+        /// <summary>
+        /// Get product information by product id
+        /// </summary>
+        /// <param name="ebProductId">Product id</param>
+        /// <returns></returns>
         public ProductInformation GetProductInformationById(string ebProductId)
         {
             ProductInformation productInformation = null;
@@ -46,6 +51,11 @@ namespace CB.IntegrationService.DAL
             return productInformation;
         }
 
+        /// <summary>
+        /// Get product information by product name
+        /// </summary>
+        /// <param name="productName">Product name</param>
+        /// <returns></returns>
         public ProductInformation GetProductInformationByName(string productName)
         {
             ProductInformation productInformation = null;

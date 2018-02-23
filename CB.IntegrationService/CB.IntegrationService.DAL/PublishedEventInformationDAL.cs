@@ -19,7 +19,14 @@ namespace CB.IntegrationService.DAL
         {
             connectionString = DatabaseCredentials.ConnectionString;
         }
-
+        /// <summary>
+        /// Create a new published record for the event specified
+        /// </summary>
+        /// <param name="ebEventId">Id of the event to pubish</param>
+        /// <param name="ebProductId">Id of the product which publishing the event</param>
+        /// <param name="payload">Payload information of the publishing event</param>
+        /// <param name="eventDeliveryInformation">Event delivery information</param>
+        /// <returns></returns>
         public long CreatePublishedEventInformation(string ebEventId, string ebProductId, string payload, EventDeliveryInformation eventDeliveryInformation)
         {
             long tokenId = -1;
@@ -48,10 +55,21 @@ namespace CB.IntegrationService.DAL
 
             return tokenId;
         }
+        /// <summary>
+        /// Get published event information by event id
+        /// </summary>
+        /// <param name="tokenId">Published event id</param>
+        /// <returns></returns>
         public PublishedEventInformation GetPublishedEventInformation(long tokenId)
         {
             return GetPublishedEventInformation(tokenId.ToString());
         }
+
+        /// <summary>
+        /// Get published event information by event if
+        /// </summary>
+        /// <param name="tokenId">Published event id</param>
+        /// <returns></returns>
         public PublishedEventInformation GetPublishedEventInformation(string tokenId)
         {
             PublishedEventInformation eventInformation = null;
@@ -86,6 +104,12 @@ namespace CB.IntegrationService.DAL
             return eventInformation;
         }
 
+        /// <summary>
+        /// Update published event delivery information
+        /// </summary>
+        /// <param name="tokenId">Id of the event to update the delivery information</param>
+        /// <param name="eventDeliveryInformation">Event delivery information to be update</param>
+        /// <returns></returns>
         public bool UpdatePublishedEventDeliveryInformation(long tokenId, EventDeliveryInformation eventDeliveryInformation)
         {
             try
@@ -111,6 +135,11 @@ namespace CB.IntegrationService.DAL
             return false;
         }
 
+        /// <summary>
+        /// Delete published event information from the database by id
+        /// </summary>
+        /// <param name="tokenId">Published event id</param>
+        /// <returns></returns>
         public bool DeletePublishedEventInformation(long tokenId)
         {
             try

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace CB.IntegrationService.Utils
 {
+    /// <summary>
+    /// Notify error by send mail to with the detailed exception list.
+    /// </summary>
     public static class ErrorNotifyHelper
     {
         private static string Recipient = "akhil3203@gmail.com";

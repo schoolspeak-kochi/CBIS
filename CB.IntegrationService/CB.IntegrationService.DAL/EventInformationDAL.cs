@@ -13,6 +13,14 @@ namespace CB.IntegrationService.DAL
 {
     public class EventInformationDAL
     {
+        /// <summary>
+        /// Create a new event information  entry.
+        /// </summary>
+        /// <param name="eventName">Event name should be a unique identifier</param>
+        /// <param name="eventDescription">Event description</param>
+        /// <param name="modelType">Standard data model used for the event</param>
+        /// <param name="Subscribers">Event subscribers lists</param>
+        /// <returns></returns>
         public long CreateEventInformation(string eventName, string eventDescription, StandardDataModels modelType, List<string> Subscribers)
         {
             long ebEventId = -1;
@@ -42,6 +50,11 @@ namespace CB.IntegrationService.DAL
             return ebEventId;
         }
 
+        /// <summary>
+        /// Get event information by event name
+        /// </summary>
+        /// <param name="ebEventName">Event name</param>
+        /// <returns></returns>
         public EventInformation GetEventInformationByName(string ebEventName)
         {
             EventInformation eventInformation = null;
@@ -78,6 +91,11 @@ namespace CB.IntegrationService.DAL
             return eventInformation;
         }
 
+        /// <summary>
+        /// Get event information by event id
+        /// </summary>
+        /// <param name="ebEventId">Event id</param>
+        /// <returns></returns>
         public EventInformation GetEventInformation(long ebEventId)
         {
             EventInformation eventInformation = null;
