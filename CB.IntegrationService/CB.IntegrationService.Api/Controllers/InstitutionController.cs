@@ -24,7 +24,7 @@ using CB.IntegrationService.ApiModels;
 using System;
 using System.Web.Http;
 
-namespace EducationBrands.IntegrationService.Api.Controllers
+namespace CommunityBrands.IntegrationService.Api.Controllers
 {
     /// <summary>
     /// 
@@ -39,7 +39,7 @@ namespace EducationBrands.IntegrationService.Api.Controllers
         /// <param name="ebProductId">The Education brands product id</param>
         /// <response code="200">Successfully disabled integration for the product</response>
         [HttpDelete]
-        [Route("EducationBrands/EBIS/1.0.0/institutions/{ebInstitutionId}/products/{ebProductId}")]
+        [Route("CBIS/1.0.0/institutions/{ebInstitutionId}/products/{ebProductId}")]
         public virtual void DisableProductInstitutionIntegration(string ebInstitutionId, string ebProductId)
         { 
             throw new NotImplementedException();
@@ -52,7 +52,7 @@ namespace EducationBrands.IntegrationService.Api.Controllers
         /// <param name="ebInstitutionId">The Education brands institution id</param>
         /// <response code="200">Successfully returned the services used by the institution</response>
         [HttpGet]
-        [Route("EducationBrands/EBIS/1.0.0/institutions/{ebInstitutionId}/products")]
+        [Route("CBIS/1.0.0/institutions/{ebInstitutionId}/products")]
         public virtual IHttpActionResult GetServicesRequest(string ebInstitutionId)
         {
             return BadRequest("This method has not been implemented");
@@ -66,7 +66,7 @@ namespace EducationBrands.IntegrationService.Api.Controllers
         /// <response code="200">Institution registered successfully with EBIS</response>
         /// <response code="409">Conflict. The institution has already been registered for integration</response>
         [HttpPost]
-        [Route("EducationBrands/EBIS/1.0.0/institutions")]
+        [Route("CBIS/1.0.0/institutions")]
         public virtual IHttpActionResult RegisterInstitution([FromBody]RegisterInstitutionRequest registerInstitutionRequest)
         {
             return BadRequest("This method has not been implemented");

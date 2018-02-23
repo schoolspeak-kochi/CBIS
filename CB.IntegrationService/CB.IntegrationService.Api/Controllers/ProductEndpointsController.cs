@@ -24,7 +24,7 @@ using CB.IntegrationService.ApiModels;
 using System;
 using System.Web.Http;
 
-namespace EducationBrands.IntegrationService.Api.Controllers
+namespace CommunityBrands.IntegrationService.Api.Controllers
 {
     /// <summary>
     /// 
@@ -38,7 +38,7 @@ namespace EducationBrands.IntegrationService.Api.Controllers
         /// <param name="ackNotification"></param>
         /// <response code="200">Acknowledgment status from event subscriber</response>
         [HttpPost]
-        [Route("EducationBrands/EBIS/1.0.0/productBaseUrl/acknowledgeNotification")]
+        [Route("CBIS/1.0.0/productBaseUrl/acknowledgeNotification")]
         public virtual void AckNotificationRequest([FromBody]AckNotification ackNotification)
         { 
             throw new NotImplementedException();
@@ -51,7 +51,7 @@ namespace EducationBrands.IntegrationService.Api.Controllers
         /// <param name="errorNotification"></param>
         /// <response code="200">Error Notifications from EBIS</response>
         [HttpPost]
-        [Route("EducationBrands/EBIS/1.0.0/productBaseUrl/errorNotification")]
+        [Route("CBIS/1.0.0/productBaseUrl/errorNotification")]
         public virtual void ErrorNotificationRequest([FromBody]ErrorNotificationRequest errorNotification)
         { 
             throw new NotImplementedException();
@@ -64,7 +64,7 @@ namespace EducationBrands.IntegrationService.Api.Controllers
         /// <param name="getQueryRequest"></param>
         /// <response code="200">Successfully returned the data.</response>
         [HttpPost]
-        [Route("EducationBrands/EBIS/1.0.0/productBaseUrl/query")]
+        [Route("CBIS/1.0.0/productBaseUrl/query")]
         public virtual IHttpActionResult GetDataQueryRequest([FromBody]GetQueryRequest getQueryRequest)
         { 
             return BadRequest("This method has not been implemented");
@@ -77,7 +77,7 @@ namespace EducationBrands.IntegrationService.Api.Controllers
         /// <param name="productNotificationRequest"></param>
         /// <response code="200">The product must return 200 OK to convey success to EBIS. A response of 200 OK will tell EBIS that the nootification was successful. Otherwise, it may attempt to retry notifications.</response>
         [HttpPost]
-        [Route("EducationBrands/EBIS/1.0.0/productBaseUrl/notification")]        
+        [Route("CBIS/1.0.0/productBaseUrl/notification")]        
         public virtual void ProductNotification([FromBody]ProductNotificationRequest productNotificationRequest)
         { 
             throw new NotImplementedException();

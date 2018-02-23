@@ -24,7 +24,7 @@ using CB.IntegrationService.ApiModels;
 using System;
 using System.Web.Http;
 
-namespace EducationBrands.IntegrationService.Api.Controllers
+namespace CommunityBrands.IntegrationService.Api.Controllers
 {
     /// <summary>
     /// 
@@ -39,7 +39,7 @@ namespace EducationBrands.IntegrationService.Api.Controllers
         /// <response code="200">OK. The product de-registered with EBIS</response>
         /// <response code="404">The specified resource was not found</response>
         [HttpDelete]
-        [Route("EducationBrands/EBIS/1.0.0/products/{ebProductId}")]
+        [Route("CBIS/1.0.0/products/{ebProductId}")]
         public virtual void DeRegisterProductById(string ebProductId)
         { 
             throw new NotImplementedException();
@@ -54,7 +54,7 @@ namespace EducationBrands.IntegrationService.Api.Controllers
         /// <response code="200">OK. The product details as registered with EBIS</response>
         /// <response code="404">The specified resource was not found</response>
         [HttpGet]
-        [Route("EducationBrands/EBIS/1.0.0/products/{ebProductId}")]
+        [Route("CBIS/1.0.0/products/{ebProductId}")]
         public virtual IHttpActionResult GetProductById(string ebProductId)
         {            
             return BadRequest("This method has not been implemented");
@@ -67,7 +67,7 @@ namespace EducationBrands.IntegrationService.Api.Controllers
         /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <response code="200">List of products registered with EBIS</response>
         [HttpGet]
-        [Route("EducationBrands/EBIS/1.0.0/products")]
+        [Route("CBIS/1.0.0/products")]
         public virtual IHttpActionResult GetProducts()
         {
             return BadRequest("This method has not been implemented");
@@ -81,7 +81,7 @@ namespace EducationBrands.IntegrationService.Api.Controllers
         /// <param name="registerProductRequest"></param>
         /// <response code="200">Product registered successfully with EBIS</response>
         [HttpPost]
-        [Route("EducationBrands/EBIS/1.0.0/products")]
+        [Route("CBIS/1.0.0/products")]
         public virtual IHttpActionResult PostProduct([FromBody]Product registerProductRequest)
         {
             return BadRequest("This method has not been implemented");
@@ -98,7 +98,7 @@ namespace EducationBrands.IntegrationService.Api.Controllers
         /// <response code="200">OK. The product details as registered with EBIS</response>
         /// <response code="404">The specified resource was not found</response>
         [HttpPut]
-        [Route("EducationBrands/EBIS/1.0.0/products/{ebProductId}")]
+        [Route("CBIS/1.0.0/products/{ebProductId}")]
         public virtual IHttpActionResult UpdateProductById(string ebProductId, [FromBody]Product product)
         {
             return BadRequest("This method has not been implemented");

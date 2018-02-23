@@ -33,7 +33,7 @@ using CB.IntegrationService.Models.Constants;
 using System.Linq;
 using CB.IntegrationService.StandardDataSet.Constants;
 
-namespace EducationBrands.IntegrationService.Api.Controllers
+namespace CommunityBrands.IntegrationService.Api.Controllers
 {
     /// <summary>
     /// 
@@ -47,7 +47,7 @@ namespace EducationBrands.IntegrationService.Api.Controllers
         /// <param name="getQueryRequest"></param>
         /// <response code="200">Successfully returned the data.</response>
         [HttpPost]
-        [Route("EducationBrands/EBIS/1.0.0/query")]
+        [Route("CBIS/1.0.0/query")]
         public virtual IHttpActionResult GetQueryRequest([FromBody]GetQueryRequest getQueryRequest)
         {
             return BadRequest("This method has not been implemented");
@@ -60,7 +60,7 @@ namespace EducationBrands.IntegrationService.Api.Controllers
         /// <param name="notificationAcknowledgeRequest"></param>
         /// <response code="200">Notification has been acknowledged successfully</response>
         [HttpPost]
-        [Route("EducationBrands/EBIS/1.0.0/notifications/acknowledge")]
+        [Route("CBIS/1.0.0/notifications/acknowledge")]
         public virtual void NotificationAcknowledge([FromBody]NotificationAcknowledgeRequest notificationAcknowledgeRequest)
         { 
             throw new NotImplementedException();
@@ -72,7 +72,7 @@ namespace EducationBrands.IntegrationService.Api.Controllers
         /// <param name="publishEventRequest"></param>
         /// <response code="200">EBIS published Event token</response>
         [HttpPost]
-        [Route("EducationBrands/EBIS/1.0.0/notifications/publish")]
+        [Route("CBIS/1.0.0/notifications/publish")]
         public virtual IHttpActionResult PublishEvent([FromBody]PublishEventRequest publishEventRequest)
         {
 
@@ -169,7 +169,7 @@ namespace EducationBrands.IntegrationService.Api.Controllers
         /// <param name="subscribeEventRequest"></param>
         /// <response code="200">Eb Event Subscription Id</response>
         [HttpPost]
-        [Route("EducationBrands/EBIS/1.0.0/notifications/subscribe")]
+        [Route("CBIS/1.0.0/notifications/subscribe")]
         public virtual IHttpActionResult SubscribeNotificationEvent([FromBody]SubscribeEventRequest subscribeEventRequest)
         {
             return BadRequest("This method has not been implemented");
