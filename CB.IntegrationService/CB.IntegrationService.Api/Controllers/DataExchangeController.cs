@@ -29,7 +29,6 @@ using CB.IntegrationService.BLL.Constants;
 using CB.IntegrationService.StandardDataSet.Models;
 using CB.IntegrationService.Utils;
 using CB.IntegrationService.Models;
-using CB.IntegrationService.Models.Constants;
 using System.Linq;
 using CB.IntegrationService.StandardDataSet.Constants;
 using System.Net.Http;
@@ -152,7 +151,6 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
         [Route("CBIS/1.0.0/notifications/publish")]
         public virtual IHttpActionResult PublishEvent([FromBody]PublishEventRequest publishEventRequest)
         {
-
             if (!CBAuthorizationHandler.AuthorizeRequest(Request))
             {
                 // If the request failed to authenticate the system responds with a 401 unauthorized access.
@@ -203,7 +201,8 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
             //    return BadRequest("Unsupported event model, please use a standard data model to map your model.");
             //}
 
-            ProductInformation productInformation = new ProductInformationDAL().GetProductInformationById(Request.Headers.GetValues(AuthenticationHeaders.PRODUCT_ID).FirstOrDefault().ToString().Trim());
+            string productId = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(Request.Headers.Authorization.Parameter)).Split(':')[0];
+            ProductInformation productInformation = new ProductInformationDAL().GetProductInformationById(productId);
             if (productInformation == null)
             {
                 Unauthorized();

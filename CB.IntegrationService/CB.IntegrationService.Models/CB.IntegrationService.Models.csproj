@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants\AuthenticationHeaders.cs" />
     <Compile Include="EmailPayload.cs" />
     <Compile Include="EventDeliveryInformation.cs" />
     <Compile Include="EventInformation.cs" />
@@ -54,6 +53,9 @@
       <Project>{446C6853-BB31-4545-82FB-25383FFC2E61}</Project>
       <Name>CB.IntegrationService.StandardDataSet</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Constants\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
