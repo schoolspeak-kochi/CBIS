@@ -4,7 +4,6 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using CB.IntegrationService.Models.Constants;
 using CB.IntegrationService.Models;
 using CB.IntegrationService.DAL;
 using CB.IntegrationService.Utils;
