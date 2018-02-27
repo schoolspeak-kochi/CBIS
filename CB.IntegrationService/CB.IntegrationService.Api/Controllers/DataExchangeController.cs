@@ -32,6 +32,8 @@ using CB.IntegrationService.Models;
 using CB.IntegrationService.Models.Constants;
 using System.Linq;
 using CB.IntegrationService.StandardDataSet.Constants;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace CommunityBrands.IntegrationService.Api.Controllers
 {
@@ -61,9 +63,84 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
         /// <response code="200">Notification has been acknowledged successfully</response>
         [HttpPost]
         [Route("CBIS/1.0.0/notifications/acknowledge")]
-        public virtual void NotificationAcknowledge([FromBody]NotificationAcknowledgeRequest notificationAcknowledgeRequest)
-        { 
-            throw new NotImplementedException();
+        public virtual IHttpActionResult NotificationAcknowledge([FromBody]NotificationAcknowledgeRequest notificationAcknowledgeRequest)
+        {
+            if (!CBAuthorizationHandler.AuthorizeRequest(Request))
+            {
+                // If the request failed to authenticate the system responds with a 401 unauthorized access.
+                return Unauthorized();
+            }
+
+            if (notificationAcknowledgeRequest == null)
+            {
+                // Validate the acknowledgement request 
+                return BadRequest("Invalid acknowledgement information.");
+            }
+
+            if (String.IsNullOrWhiteSpace(notificationAcknowledgeRequest.EventToken))
+            {
+                // Validate the event tocken
+                return BadRequest("Invalid acknowledgement request tocken information.");
+            }
+            PublishedEventInformation eventInfo = new PublishedEventInformationDAL().GetPublishedEventInformation(notificationAcknowledgeRequest.EventToken);
+            if (eventInfo == null)
+            {
+                return BadRequest("Failed to acknowledge with the given event tocken");
+            }
+
+            try
+            {
+                ProductNotificationRequest ebEventData = JsonHelper.DeSerialize<ProductNotificationRequest>(eventInfo.Payload.ToString());
+                if (ebEventData == null)
+                {
+                    ErrorNotifyHelper.InternalError("Failed to parse event payload information while acknowledge");
+                    return BadRequest();
+                }
+                if (!ebEventData.AcknowledgementRequired.Value)
+                {
+                    BadRequest("Acknowledgement is not opted for the event");
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorNotifyHelper.InternalError("Failed to publish event notification", ex);
+                return InternalServerError();
+            }
+
+
+            ProductInformation productInformation = new ProductInformationDAL().GetProductInformationById(eventInfo.EbProductId.ToString());
+            if (productInformation == null)
+            {
+                return NotFound();
+            }
+
+
+
+            // Send acknowledgement to the client.
+            SendAcknowledgement(productInformation.EndpointURL, notificationAcknowledgeRequest).GetAwaiter().GetResult();
+            return Ok("Successfully acknowledged");
+        }
+
+        /// <summary>
+        /// Send event acknowledgement to the orginator of the message
+        /// </summary>
+        /// <param name="ebAcknowledgeData"></param>
+        /// <returns></returns>
+        [NonAction]
+        public static async Task<HttpResponseMessage> SendAcknowledgement(string url, NotificationAcknowledgeRequest notificationAcknowledgeRequest)
+        {
+            HttpResponseMessage response = null;
+            try
+            {
+                response = await new HttpClient().PostAsJsonAsync<NotificationAcknowledgeRequest>(url + @"/acknowledgeNotification", notificationAcknowledgeRequest);
+                response.EnsureSuccessStatusCode();
+            }
+            catch (Exception ex)
+            {
+                ErrorNotifyHelper.ClientError("Failed to acknowledge", "Product base url is" + url, ex);
+            }
+            // return URI of the created resource.
+            return response;
         }
         /// <summary>
         /// Publish an event.
