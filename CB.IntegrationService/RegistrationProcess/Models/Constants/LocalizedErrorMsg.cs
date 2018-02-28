@@ -17,7 +17,7 @@ namespace RegistrationProcess.Models.Constants
         public static string ProductEndPointRequiredMsg
         {
             get {
-                return "Please enter product endpoint url.";
+                return "Please enter product endpoint URL.";
                }
         }
 

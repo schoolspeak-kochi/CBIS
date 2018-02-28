@@ -42,34 +42,28 @@
             @Html.LabelFor(model => model.ServiceOffered,  "Supported Services", htmlAttributes: new { @class = "control-label col-md-3" })
             <div class="col-md-9" style="border-width: 1px; border-color: #000; border-style: solid; padding-left:">
 
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="checkbox100" checked="checked">
-                    <label class="control-label" for="checkbox100">Student Information System(SIS)</label>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="sis" name="chkService" checked="checked">Student Information System(SIS)</label>
                 </div>
 
-                <div class="form-check">
-                    <input type="checkbox" class="filled-in form-check-input" id="checkbox101">
-                    <label class="form-check-label" for="checkbox101">Tuition Management(TM)</label>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="Tm" name="chkService" checked="" >Tuition Management(TM)</label>
                 </div>
 
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="checkbox100">
-                    <label class="form-check-label" for="checkbox100">Admission(A)</label>
+                <div class="checkbox disabled">
+                    <label><input type="checkbox" value="" name="chkService" checked="">Admission(A)</label>
                 </div>
 
-                <div class="form-check">
-                    <input type="checkbox" class="filled-in form-check-input" id="checkbox101">
-                    <label class="form-check-label" for="checkbox101">Financial Aid(FA)</label>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="" name="chkService" checked="">Financial Aid(FA)</label>
                 </div>
 
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="checkbox100">
-                    <label class="form-check-label" for="checkbox100">Enrollment(E)</label>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="" checked="">Enrollment(E)</label>
                 </div>
 
-                <div class="form-check">
-                    <input type="checkbox" class="filled-in form-check-input" id="checkbox101">
-                    <label class="form-check-label" for="checkbox101">Adjustment(A)</label>
+                <div class="checkbox disabled">
+                    <label><input type="checkbox" value="" checked="">Adjustment(A)</label>
                 </div>
 
             </div>
@@ -79,6 +73,20 @@
             <div class="col-md-offset-3 col-md-9">
                 <input type="submit" value="Register" class="btn btn-default" />
             </div>
+        </div>
+    </div>
+
+    <div class="row" >
+        <div class="col-md-12">
+            @ViewBag.Message
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            @ViewBag.SecretMessage
+        </div>
+        <div class="text-danger col-md-1">
+            @ViewBag.SecretKey
         </div>
     </div>
 }
