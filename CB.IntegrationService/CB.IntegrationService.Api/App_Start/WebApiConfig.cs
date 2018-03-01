@@ -19,6 +19,9 @@ namespace CB.IntegrationService.Api
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            // Basic authentication filter
+            config.Filters.Add(new Filters.IdentityBasicAuthenticationAttribute());
         }
     }
 }
