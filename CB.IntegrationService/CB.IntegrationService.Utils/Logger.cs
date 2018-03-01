@@ -12,55 +12,50 @@ namespace CB.IntegrationService.Utils
         private static readonly NLog.Logger _logger = LogManager.GetCurrentClassLogger();
 
         /// <summary>
-        /// Logs the exception.
+        /// Log the Exceptions 
         /// </summary>
-        /// <param name="ex">The ex.</param>
+        /// <param name="ex">Exception</param>
         public static void LogException(this Exception ex)
         {
             _logger.Error(ex, "Error:");
         }
 
         /// <summary>
-        /// Logs the specified message as an Error.
+        /// Log the error
         /// </summary>
-        /// <param name="ex">The ex.</param>
+        /// <param name="message">The error Message</param>
         public static void LogError(string message)
         {
             _logger.Error(message);
         }
 
         /// <summary>
-        /// Logs the message.
+        /// Log the Information
         /// </summary>
-        /// <param name="message">The message.</param>
-        public static void LogMessage(string message)
+        /// <param name="message">The information Message</param>
+        public static void LogInfo(string message)
         {
             _logger.Info(message);
         }
 
         /// <summary>
-        /// Logs a warning.
+        /// Logs warning.
         /// </summary>
-        /// <param name="message">The message.</param>
+        /// <param name="message">The warning message.</param>
         public static void LogWarning(string message)
         {
             _logger.Warn(message);
         }
 
         /// <summary>
-        /// Gets the error message.
+        /// Logs the Trace.
         /// </summary>
-        /// <param name="ex">The ex.</param>
-        /// <returns></returns>
-        public static string GetErrorMessage(Exception ex)
+        /// <param name="message">The trace</param>
+        public static void LogTrace(string message)
         {
-#if DEBUG
-            return ex.Message;
-#else
-            return string.Format("Sorry! An unexpected error has occurred at {0}. Please contact your administrator.", DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));;
-#endif
-
+            _logger.Trace(message);
         }
+      
 
         /// <summary>
         /// Writes a message if in DEBUG mode.
