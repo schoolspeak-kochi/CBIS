@@ -51,6 +51,7 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
         [Route("CBIS/1.0.0/query")]
         public virtual IHttpActionResult GetQueryRequest([FromBody]GetQueryRequest getQueryRequest)
         {
+            Logger.LogTrace("Called the API 'CBIS/1.0.0/query' Method: POST");
             return BadRequest("This method has not been implemented");
         }
 
@@ -64,6 +65,7 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
         [Route("CBIS/1.0.0/notifications/acknowledge")]
         public virtual IHttpActionResult NotificationAcknowledge([FromBody]NotificationAcknowledgeRequest notificationAcknowledgeRequest)
         {
+            Logger.LogTrace("Called the API 'CBIS/1.0.0/notifications/acknowledge' Method: POST");
             if (!CBAuthorizationHandler.AuthorizeRequest(Request))
             {
                 // If the request failed to authenticate the system responds with a 401 unauthorized access.
