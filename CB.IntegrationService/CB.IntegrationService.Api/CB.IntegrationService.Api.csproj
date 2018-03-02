@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -96,6 +97,9 @@
     <Compile Include="Controllers\InstitutionController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductEndpointsController.cs" />
+    <Compile Include="ActionResults\AuthenticationFailureResult.cs" />
+    <Compile Include="Filters\IdentityBasicAuthentication.cs" />
+    <Compile Include="Filters\IdentityBasicAuthenticationAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -123,6 +127,10 @@
     <ProjectReference Include="..\CB.IntegrationService.BLL\CB.IntegrationService.BLL.csproj">
       <Project>{a16e56c1-fb95-4002-9590-ca010742570e}</Project>
       <Name>CB.IntegrationService.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CB.IntegrationService.DAL\CB.IntegrationService.DAL.csproj">
+      <Project>{7C5C0BC5-EBE4-48E7-8E6B-82F573CA795C}</Project>
+      <Name>CB.IntegrationService.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\CB.IntegrationService.Models\CB.IntegrationService.Models.csproj">
       <Project>{3DEF2500-C61C-4303-A8AA-D293DCE8E9BB}</Project>

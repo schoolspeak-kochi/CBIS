@@ -28,6 +28,7 @@ using System.Net.Http;
 using CB.IntegrationService.BLL;
 using CB.IntegrationService.BLL.Utils;
 using AutoMapper;
+using CB.IntegrationService.Utils;
 
 namespace CommunityBrands.IntegrationService.Api.Controllers
 {
@@ -46,6 +47,7 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
         [Route("CBIS/1.0.0/query")]
         public virtual IHttpActionResult GetQueryRequest([FromBody]GetQueryRequest getQueryRequest)
         {
+            Logger.LogTrace("Called the API 'CBIS/1.0.0/query' Method: POST");
             return BadRequest("This method has not been implemented");
         }
 
@@ -59,6 +61,8 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
         [Route("CBIS/1.0.0/notifications/acknowledge")]
         public virtual IHttpActionResult NotificationAcknowledge([FromBody]NotificationAcknowledgeRequest notificationAcknowledgeRequest)
         {
+            Logger.LogTrace("Called the API 'CBIS/1.0.0/notifications/acknowledge' Method: POST");
+
             //Auto map publishEventRequest object to its currsesponding DTO object
             NotificationAcknowledgeRequestDTO notificationAcknowledgeRequestDTO = AutoMapperConfig.MapperConfiguration.CreateMapper().Map<NotificationAcknowledgeRequest, NotificationAcknowledgeRequestDTO>(notificationAcknowledgeRequest);
 
