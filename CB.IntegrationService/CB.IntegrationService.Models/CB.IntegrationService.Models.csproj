@@ -42,9 +42,15 @@
   <ItemGroup>
     <Compile Include="EmailPayload.cs" />
     <Compile Include="EventDeliveryInformation.cs" />
-    <Compile Include="EventInformation.cs" />
+    <Compile Include="CbisEvent.cs" />
+    <Compile Include="Exceptions\EventException.cs" />
+    <Compile Include="Exceptions\ProductException.cs" />
+    <Compile Include="NotificationAcknowledgeRequestDTO.cs" />
     <Compile Include="ProductInformation.cs" />
+    <Compile Include="ProductNotificationRequestDTO.cs" />
     <Compile Include="PublishedEventInformation.cs" />
+    <Compile Include="PublishEventRequestDTO.cs" />
+    <Compile Include="PublishEventResponseDTO.cs" />
     <Compile Include="QueuedEventInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

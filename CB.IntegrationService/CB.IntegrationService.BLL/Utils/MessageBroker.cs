@@ -9,7 +9,6 @@ using CB.IntegrationService.DAL;
 using CB.IntegrationService.Utils;
 using CB.IntegrationService.DAL.Data;
 using Amazon.SQS.Model;
-using CB.IntegrationService.ApiModels;
 
 namespace CB.IntegrationService.BLL.Utils
 {
@@ -51,7 +50,7 @@ namespace CB.IntegrationService.BLL.Utils
         /// Payload - Event Payload cannot be null while publishing an event
         /// </exception>
         /// <exception cref="System.ApplicationException"></exception>
-        public static string PublishEvent(ProductInformation productInformation, EventInformation eventInformation, ProductNotificationRequest notificationRequest)
+        public static string PublishEvent(ProductInformation productInformation, CbisEvent eventInformation, ProductNotificationRequestDTO notificationRequest)
         {
             if (notificationRequest == null)
             {

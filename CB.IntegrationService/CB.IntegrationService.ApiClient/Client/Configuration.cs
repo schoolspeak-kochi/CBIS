@@ -35,7 +35,7 @@ namespace CB.IntegrationService.ApiClient.Client
         // ReSharper disable once InconsistentNaming
         public const string ISO8601_DATETIME_FORMAT = "o";
 
-        public const string BASE_PATH = "http://ec2-18-220-1-208.us-east-2.compute.amazonaws.com:9070/cbis/1.0.0/";
+        public const string BASE_PATH = "http://192.168.150.62:8787/CBIS/1.0.0/";
 
         #endregion Constants
 

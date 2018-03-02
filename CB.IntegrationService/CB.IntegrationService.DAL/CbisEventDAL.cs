@@ -11,7 +11,7 @@ using CB.IntegrationService.StandardDataSet.Constants;
 
 namespace CB.IntegrationService.DAL
 {
-    public class EventInformationDAL
+    public class CbisEventDAL
     {
         /// <summary>
         /// Create a new event information  entry.
@@ -55,9 +55,9 @@ namespace CB.IntegrationService.DAL
         /// </summary>
         /// <param name="ebEventName">Event name</param>
         /// <returns></returns>
-        public EventInformation GetEventInformationByName(string ebEventName)
+        public CbisEvent GetEventInformationByName(string ebEventName)
         {
-            EventInformation eventInformation = null;
+            CbisEvent eventInformation = null;
             try
             {
                 using (SqlConnection sqlConnection = new SqlConnection(DatabaseCredentials.ConnectionString))
@@ -70,7 +70,7 @@ namespace CB.IntegrationService.DAL
                     {
                         while (reader.Read())
                         {
-                            eventInformation = new EventInformation();
+                            eventInformation = new CbisEvent();
                             long.TryParse(reader["EbEventId"].ToString(), out eventInformation.EbEventId);
                             eventInformation.EventName = reader["EventName"].ToString();
                             eventInformation.EventDescription = reader["EventDescription"].ToString();
@@ -96,9 +96,9 @@ namespace CB.IntegrationService.DAL
         /// </summary>
         /// <param name="ebEventId">Event id</param>
         /// <returns></returns>
-        public EventInformation GetEventInformation(long ebEventId)
+        public CbisEvent GetEventInformation(long ebEventId)
         {
-            EventInformation eventInformation = null;
+            CbisEvent eventInformation = null;
             try
             {
                 using (SqlConnection sqlConnection = new SqlConnection(DatabaseCredentials.ConnectionString))
@@ -111,7 +111,7 @@ namespace CB.IntegrationService.DAL
                     {
                         while (reader.Read())
                         {
-                            eventInformation = new EventInformation();
+                            eventInformation = new CbisEvent();
                             long.TryParse(reader["EbEventId"].ToString(), out eventInformation.EbEventId);
                             eventInformation.EventName = reader["EventName"].ToString();
                             eventInformation.EventDescription = reader["EventDescription"].ToString();

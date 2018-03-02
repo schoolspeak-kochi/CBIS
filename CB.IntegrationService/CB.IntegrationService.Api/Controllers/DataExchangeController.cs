@@ -23,16 +23,11 @@
 using CB.IntegrationService.ApiModels;
 using System;
 using System.Web.Http;
-using CB.IntegrationService.BLL.Utils;
-using CB.IntegrationService.DAL;
-using CB.IntegrationService.BLL.Constants;
-using CB.IntegrationService.StandardDataSet.Models;
-using CB.IntegrationService.Utils;
 using CB.IntegrationService.Models;
-using System.Linq;
-using CB.IntegrationService.StandardDataSet.Constants;
 using System.Net.Http;
-using System.Threading.Tasks;
+using CB.IntegrationService.BLL;
+using CB.IntegrationService.BLL.Utils;
+using AutoMapper;
 
 namespace CommunityBrands.IntegrationService.Api.Controllers
 {
@@ -64,83 +59,29 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
         [Route("CBIS/1.0.0/notifications/acknowledge")]
         public virtual IHttpActionResult NotificationAcknowledge([FromBody]NotificationAcknowledgeRequest notificationAcknowledgeRequest)
         {
-            if (!CBAuthorizationHandler.AuthorizeRequest(Request))
-            {
-                // If the request failed to authenticate the system responds with a 401 unauthorized access.
-                return Unauthorized();
-            }
-
-            if (notificationAcknowledgeRequest == null)
-            {
-                // Validate the acknowledgement request 
-                return BadRequest("Invalid acknowledgement information.");
-            }
-
-            if (String.IsNullOrWhiteSpace(notificationAcknowledgeRequest.EventToken))
-            {
-                // Validate the event tocken
-                return BadRequest("Invalid acknowledgement request tocken information.");
-            }
-            PublishedEventInformation eventInfo = new PublishedEventInformationDAL().GetPublishedEventInformation(notificationAcknowledgeRequest.EventToken);
-            if (eventInfo == null)
-            {
-                return BadRequest("Failed to acknowledge with the given event tocken");
-            }
+            //Auto map publishEventRequest object to its currsesponding DTO object
+            NotificationAcknowledgeRequestDTO notificationAcknowledgeRequestDTO = AutoMapperConfig.MapperConfiguration.CreateMapper().Map<NotificationAcknowledgeRequest, NotificationAcknowledgeRequestDTO>(notificationAcknowledgeRequest);
 
             try
             {
-                ProductNotificationRequest ebEventData = JsonHelper.DeSerialize<ProductNotificationRequest>(eventInfo.Payload.ToString());
-                if (ebEventData == null)
-                {
-                    ErrorNotifyHelper.InternalError("Failed to parse event payload information while acknowledge");
-                    return BadRequest();
-                }
-                if (!ebEventData.AcknowledgementRequired.Value)
-                {
-                    BadRequest("Acknowledgement is not opted for the event");
-                }
+                HttpResponseMessage response = null;
+                response = new CbisAcknowledgeBLL().Acknowledge(notificationAcknowledgeRequestDTO);
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    return Ok("Successfully acknowledged");
+
+                return BadRequest($"Status Code: {response.StatusCode.ToString()}. Failed to acknowledge");
+
             }
             catch (Exception ex)
             {
-                ErrorNotifyHelper.InternalError("Failed to publish event notification", ex);
-                return InternalServerError();
+                if (ex is ApplicationException)
+                    return InternalServerError(ex);
+
+                return BadRequest(ex.Message);
             }
-
-
-            ProductInformation productInformation = new ProductInformationDAL().GetProductInformationById(eventInfo.EbProductId.ToString());
-            if (productInformation == null)
-            {
-                return NotFound();
-            }
-
-
-
-            // Send acknowledgement to the client.
-            SendAcknowledgement(productInformation.EndpointURL, notificationAcknowledgeRequest).GetAwaiter().GetResult();
-            return Ok("Successfully acknowledged");
         }
 
-        /// <summary>
-        /// Send event acknowledgement to the orginator of the message
-        /// </summary>
-        /// <param name="ebAcknowledgeData"></param>
-        /// <returns></returns>
-        [NonAction]
-        public static async Task<HttpResponseMessage> SendAcknowledgement(string url, NotificationAcknowledgeRequest notificationAcknowledgeRequest)
-        {
-            HttpResponseMessage response = null;
-            try
-            {
-                response = await new HttpClient().PostAsJsonAsync<NotificationAcknowledgeRequest>(url + @"/acknowledgeNotification", notificationAcknowledgeRequest);
-                response.EnsureSuccessStatusCode();
-            }
-            catch (Exception ex)
-            {
-                ErrorNotifyHelper.ClientError("Failed to acknowledge", "Product base url is" + url, ex);
-            }
-            // return URI of the created resource.
-            return response;
-        }
         /// <summary>
         /// Publish an event.
         /// </summary>
@@ -151,90 +92,19 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
         [Route("CBIS/1.0.0/notifications/publish")]
         public virtual IHttpActionResult PublishEvent([FromBody]PublishEventRequest publishEventRequest)
         {
-            if (!CBAuthorizationHandler.AuthorizeRequest(Request))
-            {
-                // If the request failed to authenticate the system responds with a 401 unauthorized access.
-                return Unauthorized();
-            }
-
-            if (publishEventRequest == null)
-            {
-                return BadRequest("Invalid event information.");
-            }
-
-            // Validate requested event from DB
-            EventInformation eventInfo = new EventInformationDAL().GetEventInformationByName(publishEventRequest.EventName);
-
-            // Notify the client if the requested event not supported
-            if (eventInfo == null)
-            {
-                return BadRequest("Unsupported event. Please request for a valid event");
-            }
-
-            // IIntegrationModel integrationModel = null;
-            CB.IntegrationService.StandardDataSet.Constants.StandardDataModels MessageType = eventInfo.ModelType;
-            try
-            {
-
-                switch (eventInfo.ModelType)
-                {
-                    case StandardDataModels.Member:
-                        MembersCollection member = JsonHelper.DeSerialize<MembersCollection>(publishEventRequest.Payload.ToString());
-                        break;
-
-                    case StandardDataModels.Default:
-                    default:
-                       // MessageType = StandardDataModels.Default;
-                        //integrationModel = (IIntegrationModel)JsonHelper.DeSerialize<EBDefaultModel>(publishEventRequest.ToString());
-                        break;
-                }
-            }
-            catch
-            {
-                // Notify, If the request failed to map with the requested event standard model
-                return BadRequest("Unexpected error occurred while parsing requested model. Please use the standard model assigned to the event.");
-            }
-
-            // Validate request model 
-            //if (integrationModel == null)
-            //{
-            //    return BadRequest("Unsupported event model, please use a standard data model to map your model.");
-            //}
-
-            string productId = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(Request.Headers.Authorization.Parameter)).Split(':')[0];
-            ProductInformation productInformation = new ProductInformationDAL().GetProductInformationById(productId);
-            if (productInformation == null)
-            {
-                Unauthorized();
-            }
-
-            // Generate the notification request
-            ProductNotificationRequest productNotificationRequest = new ProductNotificationRequest()
-            {
-                PublishingProductName = productInformation.ProductName,
-                InstitutionName = publishEventRequest.InstitutionName,
-                EbInstitutionId = publishEventRequest.EbInstitutionId,
-                EventName = publishEventRequest.EventName,
-                MessageType = MessageType.ToString(),
-                AcknowledgementRequired = publishEventRequest.AcknowledgementRequired,
-                Payload = publishEventRequest.Payload
-            };
-
+            //Auto map publishEventRequest object to its currsesponding DTO object
+            PublishEventRequestDTO publishEventRequestDTO = AutoMapperConfig.MapperConfiguration.CreateMapper().Map<PublishEventRequest, PublishEventRequestDTO>(publishEventRequest);
 
             try
             {
-                string token = MessageBroker.PublishEvent(productInformation, eventInfo, productNotificationRequest);
-                return Json(new PublishEventResponse { EbPublishedEventId = token });
-            }
-            catch (ApplicationException ex)
-            {
-                ErrorNotifyHelper.InternalError("Failed to publish event notification", ex);
-                return InternalServerError(ex);
+                return Json(new CbisEventBLL().Publish(RequestContext.Principal.Identity.Name, publishEventRequestDTO));
             }
             catch (Exception ex)
             {
-                ErrorNotifyHelper.InternalError("Failed to publish event notification", ex);
-                return InternalServerError();
+                if (ex is ApplicationException)
+                    return InternalServerError(ex);
+
+                return BadRequest(ex.Message);
             }
         }
 
