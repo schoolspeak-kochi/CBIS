@@ -21,6 +21,7 @@
  */
 
 using CB.IntegrationService.ApiModels;
+using CB.IntegrationService.Utils;
 using System;
 using System.Web.Http;
 
@@ -41,7 +42,8 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
         [HttpDelete]
         [Route("CBIS/1.0.0/institutions/{ebInstitutionId}/products/{ebProductId}")]
         public virtual void DisableProductInstitutionIntegration(string ebInstitutionId, string ebProductId)
-        { 
+        {
+            Logger.LogTrace($" API : CBIS/1.0.0/institutions/{ebInstitutionId}/products/{ebProductId}");
             throw new NotImplementedException();
         }
 
@@ -55,6 +57,7 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
         [Route("CBIS/1.0.0/institutions/{ebInstitutionId}/products")]
         public virtual IHttpActionResult GetServicesRequest(string ebInstitutionId)
         {
+            Logger.LogTrace($" API : CBIS/1.0.0/institutions/{ebInstitutionId}/products");
             return BadRequest("This method has not been implemented");
         }
 
@@ -69,6 +72,7 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
         [Route("CBIS/1.0.0/institutions")]
         public virtual IHttpActionResult RegisterInstitution([FromBody]RegisterInstitutionRequest registerInstitutionRequest)
         {
+            Logger.LogTrace("API : CBIS/1.0.0/institutions");
             return BadRequest("This method has not been implemented");
         }
     }

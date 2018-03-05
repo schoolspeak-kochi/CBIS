@@ -3,6 +3,7 @@ using CB.IntegrationService.BLL.Utils;
 using CB.IntegrationService.DAL;
 using CB.IntegrationService.Models;
 using CB.IntegrationService.Models.Exceptions;
+using CB.IntegrationService.Utils;
 using System;
 
 namespace CB.IntegrationService.BLL
@@ -19,6 +20,7 @@ namespace CB.IntegrationService.BLL
         /// <returns></returns>
         public PublishEventResponseDTO Publish(string productId, PublishEventRequestDTO publishEventRequestDTO)
         {
+            Logger.LogTrace($"Publish event: product Id{productId} PublishEvent Name: {publishEventRequestDTO.EventName}");
             if (publishEventRequestDTO == null)
             {
                 throw new ArgumentNullException(nameof(publishEventRequestDTO));
@@ -49,10 +51,16 @@ namespace CB.IntegrationService.BLL
             try
             {
                 string token = MessageBroker.PublishEvent(productInformation, eventInfo, productNotificationRequestDTO);
+                Logger.LogTrace("Publish event End");
                 return new PublishEventResponseDTO() { EbPublishedEventId = token };
             }
             catch (Exception ex)
             {
+                Logger.LogTrace("Publish event End");
+                if (ex is HttpConnectionException)
+                {
+                    throw ex;
+                }
                 throw new ApplicationException("Failed to publish event notification. " + ex.Message);
             }
         }
@@ -64,6 +72,7 @@ namespace CB.IntegrationService.BLL
         /// <returns></returns>
         private bool AuthenticateEvent(string ebPublisher)
         {
+            Logger.LogTrace($"Method: AuthenticateEvent() Authenticate the published event ebPublisher:{ebPublisher}");
             if (eventInfo.EventOwner != ebPublisher)
                 return false;
 
@@ -77,6 +86,7 @@ namespace CB.IntegrationService.BLL
         /// <returns></returns>
         private ProductNotificationRequestDTO GetProductNotificationRequest(PublishEventRequestDTO publishEventRequestDTO)
         {
+            Logger.LogTrace("Method: GetProductNotificationRequest() Create the product notification request");
             return new ProductNotificationRequestDTO()
             {
                 PublishingProductName = publishEventRequestDTO.ProductName,

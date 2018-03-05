@@ -7,6 +7,7 @@ using CB.IntegrationService.Models;
 using System.Data.SqlClient;
 using System.Data;
 using CB.IntegrationService.DAL.Data;
+using CB.IntegrationService.Utils;
 
 namespace CB.IntegrationService.DAL
 {
@@ -19,6 +20,7 @@ namespace CB.IntegrationService.DAL
         /// <returns></returns>
         public ProductInformation GetProductInformationById(string ebProductId)
         {
+            Logger.LogTrace($" ProductInformationDAL.cs  Method:GetProductInformationById() ebProductId={ebProductId}");
             ProductInformation productInformation = null;
             try
             {
@@ -45,9 +47,10 @@ namespace CB.IntegrationService.DAL
             }
             catch (Exception ex)
             {
+                Logger.LogTrace(" ProductInformationDAL.cs  Method:GetProductInformationById() END");
                 throw new ApplicationException("Failed to get the product information from the database", ex);
             }
-
+            Logger.LogTrace(" ProductInformationDAL.cs  Method:GetProductInformationById() END");
             return productInformation;
         }
 
@@ -58,6 +61,7 @@ namespace CB.IntegrationService.DAL
         /// <returns></returns>
         public ProductInformation GetProductInformationByName(string productName)
         {
+            Logger.LogTrace($" ProductInformationDAL.cs  Method:GetProductInformationByName() productName={productName}");
             ProductInformation productInformation = null;
             try
             {
@@ -84,9 +88,10 @@ namespace CB.IntegrationService.DAL
             }
             catch (Exception ex)
             {
+                Logger.LogTrace(" ProductInformationDAL.cs  Method:GetProductInformationByName() END");
                 throw new ApplicationException("Failed to get the product information from the database", ex);
             }
-
+            Logger.LogTrace(" ProductInformationDAL.cs  Method:GetProductInformationByName() END");
             return productInformation;
         }
     }

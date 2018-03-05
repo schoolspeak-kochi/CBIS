@@ -9,6 +9,7 @@ using CB.IntegrationService.DAL;
 using CB.IntegrationService.Utils;
 using CB.IntegrationService.DAL.Data;
 using Amazon.SQS.Model;
+using CB.IntegrationService.Models.Exceptions;
 
 namespace CB.IntegrationService.BLL.Utils
 {
@@ -52,6 +53,7 @@ namespace CB.IntegrationService.BLL.Utils
         /// <exception cref="System.ApplicationException"></exception>
         public static string PublishEvent(ProductInformation productInformation, CbisEvent eventInformation, ProductNotificationRequestDTO notificationRequest)
         {
+            Logger.LogTrace("MessageBroker.cs Method: PublishEvent() publish an event");
             if (notificationRequest == null)
             {
                 throw new ArgumentNullException(nameof(notificationRequest), "Event data cannot null while publishing an event");
@@ -83,16 +85,17 @@ namespace CB.IntegrationService.BLL.Utils
                     SendMessageResponse sendMessageResponse = amazonSQSClient.SendMessage(sendMessageRequest);
                     if (sendMessageResponse.HttpStatusCode != System.Net.HttpStatusCode.OK)
                     {
-                        throw new ApplicationException($"Publish event failed for EbProductId: {productId} and Event: {eventInformation.EventName} with StatusCode: {sendMessageResponse.HttpStatusCode}");
+                        throw new HttpConnectionException((int)sendMessageResponse.HttpStatusCode, $"Publish event failed for EbProductId: {productId} and Event: {eventInformation.EventName}");
                     }
                 }
+                Logger.LogTrace("MessageBroker.cs Method: PublishEvent() End");
                 return eventQueueInformation.EventToken.ToString();
             }
             catch (Exception ex)
             {
-                ex.LogException();
+                Logger.LogTrace("MessageBroker.cs Method: PublishEvent() End");
+                throw ex;
             }
-            return default(string);
         }
     }
 }

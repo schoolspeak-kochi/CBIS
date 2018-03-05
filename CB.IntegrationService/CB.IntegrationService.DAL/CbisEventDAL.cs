@@ -8,6 +8,7 @@ using CB.IntegrationService.Models;
 using System.Data;
 using CB.IntegrationService.DAL.Data;
 using CB.IntegrationService.StandardDataSet.Constants;
+using CB.IntegrationService.Utils;
 
 namespace CB.IntegrationService.DAL
 {
@@ -24,6 +25,7 @@ namespace CB.IntegrationService.DAL
         public long CreateEventInformation(string eventName, string eventDescription, StandardDataModels modelType, List<string> Subscribers)
         {
             long ebEventId = -1;
+            Logger.LogTrace($" CbisEventDAL.cs  Method:CreateEventInformation() eventName={eventName},eventDescription={eventDescription}, modelType= {modelType} subscribers={string.Join(",",Subscribers.ToArray())}");
             try
             {
                 using (SqlConnection sqlConnection = new SqlConnection(DatabaseCredentials.ConnectionString))
@@ -44,9 +46,11 @@ namespace CB.IntegrationService.DAL
             }
             catch (Exception ex)
             {
+                Logger.LogTrace(" CbisEventDAL.cs  Method:CreateEventInformation() End");
+
                 throw new ApplicationException("Failed to create the event information in the database", ex);
             }
-
+            Logger.LogTrace(" CbisEventDAL.cs  Method:CreateEventInformation() End");
             return ebEventId;
         }
 
@@ -57,6 +61,7 @@ namespace CB.IntegrationService.DAL
         /// <returns></returns>
         public CbisEvent GetEventInformationByName(string ebEventName)
         {
+            Logger.LogTrace($" CbisEventDAL.cs  Method:GetEventInformationByName() ebEventName={ebEventName}");
             CbisEvent eventInformation = null;
             try
             {
@@ -85,9 +90,10 @@ namespace CB.IntegrationService.DAL
             }
             catch (Exception ex)
             {
+                Logger.LogTrace(" CbisEventDAL.cs  Method:GetEventInformationByName() End");
                 throw new ApplicationException("Failed to get the event information from the database", ex);
             }
-
+            Logger.LogTrace(" CbisEventDAL.cs  Method:GetEventInformationByName() End");
             return eventInformation;
         }
 
@@ -98,6 +104,7 @@ namespace CB.IntegrationService.DAL
         /// <returns></returns>
         public CbisEvent GetEventInformation(long ebEventId)
         {
+            Logger.LogTrace($" CbisEventDAL.cs  Method:GetEventInformation() ebEventId={ebEventId}");
             CbisEvent eventInformation = null;
             try
             {
@@ -126,9 +133,10 @@ namespace CB.IntegrationService.DAL
             }
             catch (Exception ex)
             {
+                Logger.LogTrace("CbisEventDAL.cs  Method:GetEventInformation() END");
                 throw new ApplicationException("Failed to get the event information from the database", ex);
             }
-
+            Logger.LogTrace("CbisEventDAL.cs  Method:GetEventInformation() END");
             return eventInformation;
         }
     }

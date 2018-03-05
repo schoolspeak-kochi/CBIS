@@ -29,6 +29,7 @@ namespace CB.IntegrationService.DAL
         /// <returns></returns>
         public long CreatePublishedEventInformation(string ebEventId, string ebProductId, string payload, EventDeliveryInformation eventDeliveryInformation)
         {
+            Logger.LogTrace($" PublishedEventInformationDAL.cs  Method:CreatePublishedEventInformation() ebEventId={ebEventId},ebProductId={ebProductId}, payload= {payload}");
             long tokenId = -1;
             try
             {
@@ -50,9 +51,10 @@ namespace CB.IntegrationService.DAL
             }
             catch (Exception ex)
             {
+                Logger.LogTrace(" PublishedEventInformationDAL.cs  Method:CreatePublishedEventInformation() END");
                 throw new ApplicationException("Failed to create the published event information in the database", ex);
             }
-
+            Logger.LogTrace(" PublishedEventInformationDAL.cs  Method:CreatePublishedEventInformation() END");
             return tokenId;
         }
         /// <summary>
@@ -62,6 +64,7 @@ namespace CB.IntegrationService.DAL
         /// <returns></returns>
         public PublishedEventInformation GetPublishedEventInformation(long tokenId)
         {
+            Logger.LogTrace($" PublishedEventInformationDAL.cs  Method:GetPublishedEventInformation() tokenId={tokenId}");
             return GetPublishedEventInformation(tokenId.ToString());
         }
 
@@ -72,6 +75,7 @@ namespace CB.IntegrationService.DAL
         /// <returns></returns>
         public PublishedEventInformation GetPublishedEventInformation(string tokenId)
         {
+            Logger.LogTrace($" PublishedEventInformationDAL.cs  Method:GetPublishedEventInformation() tokenId={tokenId}");
             PublishedEventInformation eventInformation = null;
             try
             {
@@ -98,9 +102,10 @@ namespace CB.IntegrationService.DAL
             }
             catch (Exception ex)
             {
+                Logger.LogTrace(" PublishedEventInformationDAL.cs  Method:GetPublishedEventInformation() END");
                 throw new ApplicationException("Failed to get the published event information from the database", ex);
             }
-
+            Logger.LogTrace(" PublishedEventInformationDAL.cs  Method:GetPublishedEventInformation() END");
             return eventInformation;
         }
 
@@ -112,6 +117,7 @@ namespace CB.IntegrationService.DAL
         /// <returns></returns>
         public bool UpdatePublishedEventDeliveryInformation(long tokenId, EventDeliveryInformation eventDeliveryInformation)
         {
+            Logger.LogTrace($" PublishedEventInformationDAL.cs  Method:UpdatePublishedEventDeliveryInformation() tokenId={tokenId}");
             try
             {
                 using (SqlConnection sqlConnection = new SqlConnection(connectionString))
@@ -129,9 +135,10 @@ namespace CB.IntegrationService.DAL
             }
             catch (Exception ex)
             {
+                Logger.LogTrace(" PublishedEventInformationDAL.cs  Method:UpdatePublishedEventDeliveryInformation() END");
                 throw new ApplicationException("Failed to create the published event information in the database", ex);
             }
-
+            Logger.LogTrace(" PublishedEventInformationDAL.cs  Method:UpdatePublishedEventDeliveryInformation() END");
             return false;
         }
 
@@ -142,6 +149,7 @@ namespace CB.IntegrationService.DAL
         /// <returns></returns>
         public bool DeletePublishedEventInformation(long tokenId)
         {
+            Logger.LogTrace($" PublishedEventInformationDAL.cs  Method:DeletePublishedEventInformation() tokenId={tokenId}");
             try
             {
                 using (SqlConnection sqlConnection = new SqlConnection(connectionString))
@@ -158,9 +166,10 @@ namespace CB.IntegrationService.DAL
             }
             catch (Exception ex)
             {
+                Logger.LogTrace(" PublishedEventInformationDAL.cs  Method:DeletePublishedEventInformation() END");
                 throw new ApplicationException("Failed to create the published event information in the database", ex);
             }
-
+            Logger.LogTrace(" PublishedEventInformationDAL.cs  Method:DeletePublishedEventInformation() END");
             return false;
         }
     }

@@ -29,6 +29,7 @@ using CB.IntegrationService.BLL;
 using CB.IntegrationService.BLL.Utils;
 using AutoMapper;
 using CB.IntegrationService.Utils;
+using CB.IntegrationService.Models.Exceptions;
 
 namespace CommunityBrands.IntegrationService.Api.Controllers
 {
@@ -70,7 +71,7 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
             {
                 HttpResponseMessage response = null;
                 response = new CbisAcknowledgeBLL().Acknowledge(notificationAcknowledgeRequestDTO);
-
+                Logger.LogTrace("API 'CBIS/1.0.0/notifications/acknowledge' Method: POST  End");
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     return Ok("Successfully acknowledged");
 
@@ -79,9 +80,15 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
             }
             catch (Exception ex)
             {
+                Logger.LogTrace("API 'CBIS/1.0.0/notifications/acknowledge' Method: POST  End");
+                if (ex is HttpConnectionException)
+                {
+                    ex.LogErrorAndNotify();
+                    return BadRequest(ex.Message);
+                }              
+                ex.LogException();
                 if (ex is ApplicationException)
                     return InternalServerError(ex);
-
                 return BadRequest(ex.Message);
             }
         }
@@ -96,6 +103,7 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
         [Route("CBIS/1.0.0/notifications/publish")]
         public virtual IHttpActionResult PublishEvent([FromBody]PublishEventRequest publishEventRequest)
         {
+            Logger.LogTrace("API 'CBIS/1.0.0/notifications/publish' Method: POST  Publish an event");
             //Auto map publishEventRequest object to its currsesponding DTO object
             PublishEventRequestDTO publishEventRequestDTO = AutoMapperConfig.MapperConfiguration.CreateMapper().Map<PublishEventRequest, PublishEventRequestDTO>(publishEventRequest);
 
@@ -105,6 +113,12 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
             }
             catch (Exception ex)
             {
+                if (ex is HttpConnectionException)
+                {
+                    ex.LogErrorAndNotify();
+                    return BadRequest(ex.Message);
+                }
+                ex.LogException();
                 if (ex is ApplicationException)
                     return InternalServerError(ex);
 
@@ -122,6 +136,7 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
         [Route("CBIS/1.0.0/notifications/subscribe")]
         public virtual IHttpActionResult SubscribeNotificationEvent([FromBody]SubscribeEventRequest subscribeEventRequest)
         {
+            Logger.LogTrace("API CBIS/1.0.0/notifications/subscribe");
             return BadRequest("This method has not been implemented");
         }
     }

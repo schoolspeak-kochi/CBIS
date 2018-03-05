@@ -39,6 +39,7 @@ namespace CB.IntegrationService.Utils
         /// <param name="email">Email payload information</param>
         public void SendMail(EmailPayload email)
         {
+            Logger.LogTrace("EmailHelper.cs Method: SendEmail()");
             // Validate the event payload information before attempt for delivery.
             if (email == null)
             {
@@ -87,7 +88,8 @@ namespace CB.IntegrationService.Utils
             }
             catch (Exception)
             {
-
+                Logger.LogTrace("EmailHelper.cs Method: SendEmail() End");
+                throw new ApplicationException("Email send failed");
             }
 
         }

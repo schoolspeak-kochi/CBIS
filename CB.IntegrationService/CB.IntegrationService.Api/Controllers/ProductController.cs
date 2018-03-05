@@ -21,6 +21,7 @@
  */
 
 using CB.IntegrationService.ApiModels;
+using CB.IntegrationService.Utils;
 using System;
 using System.Web.Http;
 
@@ -41,7 +42,8 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
         [HttpDelete]
         [Route("CBIS/1.0.0/products/{ebProductId}")]
         public virtual void DeRegisterProductById(string ebProductId)
-        { 
+        {
+            Logger.LogTrace($" API : CBIS/1.0.0/products/{ebProductId}");
             throw new NotImplementedException();
         }
 
@@ -56,7 +58,8 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
         [HttpGet]
         [Route("CBIS/1.0.0/products/{ebProductId}")]
         public virtual IHttpActionResult GetProductById(string ebProductId)
-        {            
+        {
+            Logger.LogTrace($" API : CBIS/1.0.0/products/{ebProductId}");
             return BadRequest("This method has not been implemented");
         }
 
@@ -70,6 +73,7 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
         [Route("CBIS/1.0.0/products")]
         public virtual IHttpActionResult GetProducts()
         {
+            Logger.LogTrace(" API : CBIS/1.0.0/products");
             return BadRequest("This method has not been implemented");
         }
 
@@ -84,6 +88,7 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
         [Route("CBIS/1.0.0/products")]
         public virtual IHttpActionResult PostProduct([FromBody]Product registerProductRequest)
         {
+            Logger.LogTrace(" API : CBIS/1.0.0/products");
             return BadRequest("This method has not been implemented");
         }
 
@@ -101,6 +106,7 @@ namespace CommunityBrands.IntegrationService.Api.Controllers
         [Route("CBIS/1.0.0/products/{ebProductId}")]
         public virtual IHttpActionResult UpdateProductById(string ebProductId, [FromBody]Product product)
         {
+            Logger.LogTrace($" API : CBIS/1.0.0/products/{ebProductId}");
             return BadRequest("This method has not been implemented");
         }
     }

@@ -67,5 +67,15 @@ namespace CB.IntegrationService.Utils
             _logger.Debug(message);
 #endif
         }
+
+        /// <summary>
+        /// Logs the failure and send the error notification.
+        /// </summary>
+        /// <param name="message">The trace</param>
+        public static void LogErrorAndNotify(this Exception ex)
+        {
+            _logger.Error(ex,"Error: ");
+            // Write code to implement the error  notification mechanism
+        }
     }
 }

@@ -13,6 +13,7 @@ namespace CB.IntegrationService.BLL
     {
         public HttpResponseMessage Acknowledge(NotificationAcknowledgeRequestDTO notificationAcknowledgeRequestDTO)
         {
+            Logger.LogTrace("Method: Acknowledge() Create the acknowledge notification request");
             if (notificationAcknowledgeRequestDTO == null)
             {
                 throw new ArgumentNullException(nameof(notificationAcknowledgeRequestDTO));
@@ -54,7 +55,7 @@ namespace CB.IntegrationService.BLL
             {
                 throw new ProductException(publishedEventInfo.EbProductId.ToString(), $"Failed to load information of product {publishedEventInfo.EbProductId.ToString()} from DB");
             }
-
+            Logger.LogTrace("Method: Acknowledge() End");
             // Send acknowledgement to the client.
             return SendAcknowledgement(productInformation.EndpointURL, notificationAcknowledgeRequestDTO).GetAwaiter().GetResult();
 
@@ -68,6 +69,7 @@ namespace CB.IntegrationService.BLL
         /// <returns></returns>
         public static async Task<HttpResponseMessage> SendAcknowledgement(string url, NotificationAcknowledgeRequestDTO notificationAcknowledgeRequestDTO)
         {
+            Logger.LogTrace("Method: SendAcknowledgement() Send Acknowledgement");
             HttpResponseMessage response = null;
             try
             {
@@ -76,9 +78,17 @@ namespace CB.IntegrationService.BLL
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("Failed to acknowledge. Product base url is" + url, ex);
+                Logger.LogTrace("Method: SendAcknowledgement() End");
+                if (response == null)
+                {
+                    throw new ApplicationException("Failed to acknowledge. Product base url is" + url, ex);
+                }
+                else
+                {
+                    throw new HttpConnectionException((int)response.StatusCode, "couldn't connect to the product acknowledgement end point" ,ex.InnerException);
+                }
             }
-
+            Logger.LogTrace("Method: SendAcknowledgement() End");
             return response;
         }
     }

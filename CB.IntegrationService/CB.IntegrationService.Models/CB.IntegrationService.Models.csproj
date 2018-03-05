@@ -44,6 +44,7 @@
     <Compile Include="EventDeliveryInformation.cs" />
     <Compile Include="CbisEvent.cs" />
     <Compile Include="Exceptions\EventException.cs" />
+    <Compile Include="Exceptions\HttpConnectionException.cs" />
     <Compile Include="Exceptions\ProductException.cs" />
     <Compile Include="NotificationAcknowledgeRequestDTO.cs" />
     <Compile Include="ProductInformation.cs" />
