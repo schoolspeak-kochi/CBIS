@@ -16,7 +16,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace CB.IntegrationService.ApiClient.Api
+namespace CB.IntegrationService.ApiClient
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -33,7 +33,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getQueryRequest"> (optional)</param>
         /// <returns>GetQueryResponse</returns>
-        GetQueryResponse GetQueryRequest (GetQueryRequest getQueryRequest = null);
+        GetQueryResponse GetQueryRequest(GetQueryRequest getQueryRequest = null);
 
         /// <summary>
         /// Query for data
@@ -44,7 +44,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getQueryRequest"> (optional)</param>
         /// <returns>ApiResponse of GetQueryResponse</returns>
-        ApiResponse<GetQueryResponse> GetQueryRequestWithHttpInfo (GetQueryRequest getQueryRequest = null);
+        ApiResponse<GetQueryResponse> GetQueryRequestWithHttpInfo(GetQueryRequest getQueryRequest = null);
         /// <summary>
         /// Acknowledge an event notification.
         /// </summary>
@@ -54,7 +54,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationAcknowledgeRequest"> (optional)</param>
         /// <returns></returns>
-        void NotificationAcknowledge (NotificationAcknowledgeRequest notificationAcknowledgeRequest = null);
+        void NotificationAcknowledge(NotificationAcknowledgeRequest notificationAcknowledgeRequest = null);
 
         /// <summary>
         /// Acknowledge an event notification.
@@ -65,7 +65,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationAcknowledgeRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> NotificationAcknowledgeWithHttpInfo (NotificationAcknowledgeRequest notificationAcknowledgeRequest = null);
+        ApiResponse<Object> NotificationAcknowledgeWithHttpInfo(NotificationAcknowledgeRequest notificationAcknowledgeRequest = null);
         /// <summary>
         /// Publish an event.
         /// </summary>
@@ -75,7 +75,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="publishEventRequest"> (optional)</param>
         /// <returns>PublishEventResponse</returns>
-        PublishEventResponse PublishEvent (PublishEventRequest publishEventRequest = null);
+        PublishEventResponse PublishEvent(PublishEventRequest publishEventRequest = null);
 
         /// <summary>
         /// Publish an event.
@@ -86,7 +86,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="publishEventRequest"> (optional)</param>
         /// <returns>ApiResponse of PublishEventResponse</returns>
-        ApiResponse<PublishEventResponse> PublishEventWithHttpInfo (PublishEventRequest publishEventRequest = null);
+        ApiResponse<PublishEventResponse> PublishEventWithHttpInfo(PublishEventRequest publishEventRequest = null);
         /// <summary>
         /// Subscribe to a published event
         /// </summary>
@@ -96,7 +96,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscribeEventRequest"> (optional)</param>
         /// <returns>SubscribeEventResponse</returns>
-        SubscribeEventResponse SubscribeNotificationEvent (SubscribeEventRequest subscribeEventRequest = null);
+        SubscribeEventResponse SubscribeNotificationEvent(SubscribeEventRequest subscribeEventRequest = null);
 
         /// <summary>
         /// Subscribe to a published event
@@ -107,7 +107,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscribeEventRequest"> (optional)</param>
         /// <returns>ApiResponse of SubscribeEventResponse</returns>
-        ApiResponse<SubscribeEventResponse> SubscribeNotificationEventWithHttpInfo (SubscribeEventRequest subscribeEventRequest = null);
+        ApiResponse<SubscribeEventResponse> SubscribeNotificationEventWithHttpInfo(SubscribeEventRequest subscribeEventRequest = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -119,7 +119,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getQueryRequest"> (optional)</param>
         /// <returns>Task of GetQueryResponse</returns>
-        System.Threading.Tasks.Task<GetQueryResponse> GetQueryRequestAsync (GetQueryRequest getQueryRequest = null);
+        System.Threading.Tasks.Task<GetQueryResponse> GetQueryRequestAsync(GetQueryRequest getQueryRequest = null);
 
         /// <summary>
         /// Query for data
@@ -130,7 +130,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getQueryRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (GetQueryResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetQueryResponse>> GetQueryRequestAsyncWithHttpInfo (GetQueryRequest getQueryRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<GetQueryResponse>> GetQueryRequestAsyncWithHttpInfo(GetQueryRequest getQueryRequest = null);
         /// <summary>
         /// Acknowledge an event notification.
         /// </summary>
@@ -140,7 +140,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationAcknowledgeRequest"> (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task NotificationAcknowledgeAsync (NotificationAcknowledgeRequest notificationAcknowledgeRequest = null);
+        System.Threading.Tasks.Task NotificationAcknowledgeAsync(NotificationAcknowledgeRequest notificationAcknowledgeRequest = null);
 
         /// <summary>
         /// Acknowledge an event notification.
@@ -151,7 +151,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationAcknowledgeRequest"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> NotificationAcknowledgeAsyncWithHttpInfo (NotificationAcknowledgeRequest notificationAcknowledgeRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> NotificationAcknowledgeAsyncWithHttpInfo(NotificationAcknowledgeRequest notificationAcknowledgeRequest = null);
         /// <summary>
         /// Publish an event.
         /// </summary>
@@ -161,7 +161,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="publishEventRequest"> (optional)</param>
         /// <returns>Task of PublishEventResponse</returns>
-        System.Threading.Tasks.Task<PublishEventResponse> PublishEventAsync (PublishEventRequest publishEventRequest = null);
+        System.Threading.Tasks.Task<PublishEventResponse> PublishEventAsync(PublishEventRequest publishEventRequest = null);
 
         /// <summary>
         /// Publish an event.
@@ -172,7 +172,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="publishEventRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (PublishEventResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PublishEventResponse>> PublishEventAsyncWithHttpInfo (PublishEventRequest publishEventRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<PublishEventResponse>> PublishEventAsyncWithHttpInfo(PublishEventRequest publishEventRequest = null);
         /// <summary>
         /// Subscribe to a published event
         /// </summary>
@@ -182,7 +182,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscribeEventRequest"> (optional)</param>
         /// <returns>Task of SubscribeEventResponse</returns>
-        System.Threading.Tasks.Task<SubscribeEventResponse> SubscribeNotificationEventAsync (SubscribeEventRequest subscribeEventRequest = null);
+        System.Threading.Tasks.Task<SubscribeEventResponse> SubscribeNotificationEventAsync(SubscribeEventRequest subscribeEventRequest = null);
 
         /// <summary>
         /// Subscribe to a published event
@@ -193,7 +193,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscribeEventRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (SubscribeEventResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SubscribeEventResponse>> SubscribeNotificationEventAsyncWithHttpInfo (SubscribeEventRequest subscribeEventRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<SubscribeEventResponse>> SubscribeNotificationEventAsyncWithHttpInfo(SubscribeEventRequest subscribeEventRequest = null);
         #endregion Asynchronous Operations
     }
 
@@ -254,7 +254,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -300,10 +300,10 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getQueryRequest"> (optional)</param>
         /// <returns>GetQueryResponse</returns>
-        public GetQueryResponse GetQueryRequest (GetQueryRequest getQueryRequest = null)
+        public GetQueryResponse GetQueryRequest(GetQueryRequest getQueryRequest = null)
         {
-             ApiResponse<GetQueryResponse> localVarResponse = GetQueryRequestWithHttpInfo(getQueryRequest);
-             return localVarResponse.Data;
+            ApiResponse<GetQueryResponse> localVarResponse = GetQueryRequestWithHttpInfo(getQueryRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -312,7 +312,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getQueryRequest"> (optional)</param>
         /// <returns>ApiResponse of GetQueryResponse</returns>
-        public ApiResponse< GetQueryResponse > GetQueryRequestWithHttpInfo (GetQueryRequest getQueryRequest = null)
+        public ApiResponse<GetQueryResponse> GetQueryRequestWithHttpInfo(GetQueryRequest getQueryRequest = null)
         {
 
             var localVarPath = "/query";
@@ -325,7 +325,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -348,13 +348,19 @@ namespace CB.IntegrationService.ApiClient.Api
                 localVarPostBody = getQueryRequest; // byte array
             }
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -364,7 +370,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             return new ApiResponse<GetQueryResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetQueryResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetQueryResponse)));
+                (GetQueryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetQueryResponse)));
         }
 
         /// <summary>
@@ -373,10 +379,10 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getQueryRequest"> (optional)</param>
         /// <returns>Task of GetQueryResponse</returns>
-        public async System.Threading.Tasks.Task<GetQueryResponse> GetQueryRequestAsync (GetQueryRequest getQueryRequest = null)
+        public async System.Threading.Tasks.Task<GetQueryResponse> GetQueryRequestAsync(GetQueryRequest getQueryRequest = null)
         {
-             ApiResponse<GetQueryResponse> localVarResponse = await GetQueryRequestAsyncWithHttpInfo(getQueryRequest);
-             return localVarResponse.Data;
+            ApiResponse<GetQueryResponse> localVarResponse = await GetQueryRequestAsyncWithHttpInfo(getQueryRequest);
+            return localVarResponse.Data;
 
         }
 
@@ -386,7 +392,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getQueryRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (GetQueryResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetQueryResponse>> GetQueryRequestAsyncWithHttpInfo (GetQueryRequest getQueryRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GetQueryResponse>> GetQueryRequestAsyncWithHttpInfo(GetQueryRequest getQueryRequest = null)
         {
 
             var localVarPath = "/query";
@@ -399,7 +405,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -422,13 +428,19 @@ namespace CB.IntegrationService.ApiClient.Api
                 localVarPostBody = getQueryRequest; // byte array
             }
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -438,7 +450,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             return new ApiResponse<GetQueryResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetQueryResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetQueryResponse)));
+                (GetQueryResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetQueryResponse)));
         }
 
         /// <summary>
@@ -447,9 +459,9 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationAcknowledgeRequest"> (optional)</param>
         /// <returns></returns>
-        public void NotificationAcknowledge (NotificationAcknowledgeRequest notificationAcknowledgeRequest = null)
+        public void NotificationAcknowledge(NotificationAcknowledgeRequest notificationAcknowledgeRequest = null)
         {
-             NotificationAcknowledgeWithHttpInfo(notificationAcknowledgeRequest);
+            NotificationAcknowledgeWithHttpInfo(notificationAcknowledgeRequest);
         }
 
         /// <summary>
@@ -458,7 +470,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationAcknowledgeRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> NotificationAcknowledgeWithHttpInfo (NotificationAcknowledgeRequest notificationAcknowledgeRequest = null)
+        public ApiResponse<Object> NotificationAcknowledgeWithHttpInfo(NotificationAcknowledgeRequest notificationAcknowledgeRequest = null)
         {
 
             var localVarPath = "/notifications/acknowledge";
@@ -471,7 +483,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -494,13 +506,19 @@ namespace CB.IntegrationService.ApiClient.Api
                 localVarPostBody = notificationAcknowledgeRequest; // byte array
             }
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -519,9 +537,9 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationAcknowledgeRequest"> (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task NotificationAcknowledgeAsync (NotificationAcknowledgeRequest notificationAcknowledgeRequest = null)
+        public async System.Threading.Tasks.Task NotificationAcknowledgeAsync(NotificationAcknowledgeRequest notificationAcknowledgeRequest = null)
         {
-             await NotificationAcknowledgeAsyncWithHttpInfo(notificationAcknowledgeRequest);
+            await NotificationAcknowledgeAsyncWithHttpInfo(notificationAcknowledgeRequest);
 
         }
 
@@ -531,7 +549,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationAcknowledgeRequest"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> NotificationAcknowledgeAsyncWithHttpInfo (NotificationAcknowledgeRequest notificationAcknowledgeRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> NotificationAcknowledgeAsyncWithHttpInfo(NotificationAcknowledgeRequest notificationAcknowledgeRequest = null)
         {
 
             var localVarPath = "/notifications/acknowledge";
@@ -544,7 +562,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -567,13 +585,19 @@ namespace CB.IntegrationService.ApiClient.Api
                 localVarPostBody = notificationAcknowledgeRequest; // byte array
             }
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -592,10 +616,10 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="publishEventRequest"> (optional)</param>
         /// <returns>PublishEventResponse</returns>
-        public PublishEventResponse PublishEvent (PublishEventRequest publishEventRequest = null)
+        public PublishEventResponse PublishEvent(PublishEventRequest publishEventRequest = null)
         {
-             ApiResponse<PublishEventResponse> localVarResponse = PublishEventWithHttpInfo(publishEventRequest);
-             return localVarResponse.Data;
+            ApiResponse<PublishEventResponse> localVarResponse = PublishEventWithHttpInfo(publishEventRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -604,7 +628,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="publishEventRequest"> (optional)</param>
         /// <returns>ApiResponse of PublishEventResponse</returns>
-        public ApiResponse< PublishEventResponse > PublishEventWithHttpInfo (PublishEventRequest publishEventRequest = null)
+        public ApiResponse<PublishEventResponse> PublishEventWithHttpInfo(PublishEventRequest publishEventRequest = null)
         {
 
             var localVarPath = "/notifications/publish";
@@ -617,7 +641,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -640,13 +664,19 @@ namespace CB.IntegrationService.ApiClient.Api
                 localVarPostBody = publishEventRequest; // byte array
             }
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -656,7 +686,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             return new ApiResponse<PublishEventResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PublishEventResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublishEventResponse)));
+                (PublishEventResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublishEventResponse)));
         }
 
         /// <summary>
@@ -665,10 +695,10 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="publishEventRequest"> (optional)</param>
         /// <returns>Task of PublishEventResponse</returns>
-        public async System.Threading.Tasks.Task<PublishEventResponse> PublishEventAsync (PublishEventRequest publishEventRequest = null)
+        public async System.Threading.Tasks.Task<PublishEventResponse> PublishEventAsync(PublishEventRequest publishEventRequest = null)
         {
-             ApiResponse<PublishEventResponse> localVarResponse = await PublishEventAsyncWithHttpInfo(publishEventRequest);
-             return localVarResponse.Data;
+            ApiResponse<PublishEventResponse> localVarResponse = await PublishEventAsyncWithHttpInfo(publishEventRequest);
+            return localVarResponse.Data;
 
         }
 
@@ -678,7 +708,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="publishEventRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (PublishEventResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PublishEventResponse>> PublishEventAsyncWithHttpInfo (PublishEventRequest publishEventRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<PublishEventResponse>> PublishEventAsyncWithHttpInfo(PublishEventRequest publishEventRequest = null)
         {
 
             var localVarPath = "/notifications/publish";
@@ -691,7 +721,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -714,13 +744,19 @@ namespace CB.IntegrationService.ApiClient.Api
                 localVarPostBody = publishEventRequest; // byte array
             }
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -730,7 +766,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             return new ApiResponse<PublishEventResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PublishEventResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublishEventResponse)));
+                (PublishEventResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublishEventResponse)));
         }
 
         /// <summary>
@@ -739,10 +775,10 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscribeEventRequest"> (optional)</param>
         /// <returns>SubscribeEventResponse</returns>
-        public SubscribeEventResponse SubscribeNotificationEvent (SubscribeEventRequest subscribeEventRequest = null)
+        public SubscribeEventResponse SubscribeNotificationEvent(SubscribeEventRequest subscribeEventRequest = null)
         {
-             ApiResponse<SubscribeEventResponse> localVarResponse = SubscribeNotificationEventWithHttpInfo(subscribeEventRequest);
-             return localVarResponse.Data;
+            ApiResponse<SubscribeEventResponse> localVarResponse = SubscribeNotificationEventWithHttpInfo(subscribeEventRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -751,7 +787,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscribeEventRequest"> (optional)</param>
         /// <returns>ApiResponse of SubscribeEventResponse</returns>
-        public ApiResponse< SubscribeEventResponse > SubscribeNotificationEventWithHttpInfo (SubscribeEventRequest subscribeEventRequest = null)
+        public ApiResponse<SubscribeEventResponse> SubscribeNotificationEventWithHttpInfo(SubscribeEventRequest subscribeEventRequest = null)
         {
 
             var localVarPath = "/notifications/subscribe";
@@ -764,7 +800,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -787,13 +823,19 @@ namespace CB.IntegrationService.ApiClient.Api
                 localVarPostBody = subscribeEventRequest; // byte array
             }
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -803,7 +845,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             return new ApiResponse<SubscribeEventResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SubscribeEventResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubscribeEventResponse)));
+                (SubscribeEventResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubscribeEventResponse)));
         }
 
         /// <summary>
@@ -812,10 +854,10 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscribeEventRequest"> (optional)</param>
         /// <returns>Task of SubscribeEventResponse</returns>
-        public async System.Threading.Tasks.Task<SubscribeEventResponse> SubscribeNotificationEventAsync (SubscribeEventRequest subscribeEventRequest = null)
+        public async System.Threading.Tasks.Task<SubscribeEventResponse> SubscribeNotificationEventAsync(SubscribeEventRequest subscribeEventRequest = null)
         {
-             ApiResponse<SubscribeEventResponse> localVarResponse = await SubscribeNotificationEventAsyncWithHttpInfo(subscribeEventRequest);
-             return localVarResponse.Data;
+            ApiResponse<SubscribeEventResponse> localVarResponse = await SubscribeNotificationEventAsyncWithHttpInfo(subscribeEventRequest);
+            return localVarResponse.Data;
 
         }
 
@@ -825,7 +867,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscribeEventRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (SubscribeEventResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SubscribeEventResponse>> SubscribeNotificationEventAsyncWithHttpInfo (SubscribeEventRequest subscribeEventRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<SubscribeEventResponse>> SubscribeNotificationEventAsyncWithHttpInfo(SubscribeEventRequest subscribeEventRequest = null)
         {
 
             var localVarPath = "/notifications/subscribe";
@@ -838,7 +880,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -861,13 +903,19 @@ namespace CB.IntegrationService.ApiClient.Api
                 localVarPostBody = subscribeEventRequest; // byte array
             }
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -877,7 +925,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             return new ApiResponse<SubscribeEventResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (SubscribeEventResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubscribeEventResponse)));
+                (SubscribeEventResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SubscribeEventResponse)));
         }
 
     }

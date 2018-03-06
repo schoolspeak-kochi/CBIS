@@ -16,7 +16,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace CB.IntegrationService.ApiClient.Api
+namespace CB.IntegrationService.ApiClient
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -34,7 +34,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <param name="ebInstitutionId">The Education brands institution id</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns></returns>
-        void DisableProductInstitutionIntegration (string ebInstitutionId, string ebProductId);
+        void DisableProductInstitutionIntegration(string ebInstitutionId, string ebProductId);
 
         /// <summary>
         /// Disable Integration for product
@@ -46,7 +46,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <param name="ebInstitutionId">The Education brands institution id</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DisableProductInstitutionIntegrationWithHttpInfo (string ebInstitutionId, string ebProductId);
+        ApiResponse<Object> DisableProductInstitutionIntegrationWithHttpInfo(string ebInstitutionId, string ebProductId);
         /// <summary>
         /// Get Services
         /// </summary>
@@ -56,7 +56,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ebInstitutionId">The Education brands institution id</param>
         /// <returns>GetServiceResponse</returns>
-        GetServiceResponse GetServicesRequest (string ebInstitutionId);
+        GetServiceResponse GetServicesRequest(string ebInstitutionId);
 
         /// <summary>
         /// Get Services
@@ -67,7 +67,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ebInstitutionId">The Education brands institution id</param>
         /// <returns>ApiResponse of GetServiceResponse</returns>
-        ApiResponse<GetServiceResponse> GetServicesRequestWithHttpInfo (string ebInstitutionId);
+        ApiResponse<GetServiceResponse> GetServicesRequestWithHttpInfo(string ebInstitutionId);
         /// <summary>
         /// Register a new Institution for Integration
         /// </summary>
@@ -77,7 +77,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="registerInstitutionRequest"> (optional)</param>
         /// <returns>RegisterInstitutionResponse</returns>
-        RegisterInstitutionResponse RegisterInstitution (RegisterInstitutionRequest registerInstitutionRequest = null);
+        RegisterInstitutionResponse RegisterInstitution(RegisterInstitutionRequest registerInstitutionRequest = null);
 
         /// <summary>
         /// Register a new Institution for Integration
@@ -88,7 +88,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="registerInstitutionRequest"> (optional)</param>
         /// <returns>ApiResponse of RegisterInstitutionResponse</returns>
-        ApiResponse<RegisterInstitutionResponse> RegisterInstitutionWithHttpInfo (RegisterInstitutionRequest registerInstitutionRequest = null);
+        ApiResponse<RegisterInstitutionResponse> RegisterInstitutionWithHttpInfo(RegisterInstitutionRequest registerInstitutionRequest = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -101,7 +101,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <param name="ebInstitutionId">The Education brands institution id</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DisableProductInstitutionIntegrationAsync (string ebInstitutionId, string ebProductId);
+        System.Threading.Tasks.Task DisableProductInstitutionIntegrationAsync(string ebInstitutionId, string ebProductId);
 
         /// <summary>
         /// Disable Integration for product
@@ -113,7 +113,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <param name="ebInstitutionId">The Education brands institution id</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DisableProductInstitutionIntegrationAsyncWithHttpInfo (string ebInstitutionId, string ebProductId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DisableProductInstitutionIntegrationAsyncWithHttpInfo(string ebInstitutionId, string ebProductId);
         /// <summary>
         /// Get Services
         /// </summary>
@@ -123,7 +123,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ebInstitutionId">The Education brands institution id</param>
         /// <returns>Task of GetServiceResponse</returns>
-        System.Threading.Tasks.Task<GetServiceResponse> GetServicesRequestAsync (string ebInstitutionId);
+        System.Threading.Tasks.Task<GetServiceResponse> GetServicesRequestAsync(string ebInstitutionId);
 
         /// <summary>
         /// Get Services
@@ -134,7 +134,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ebInstitutionId">The Education brands institution id</param>
         /// <returns>Task of ApiResponse (GetServiceResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetServiceResponse>> GetServicesRequestAsyncWithHttpInfo (string ebInstitutionId);
+        System.Threading.Tasks.Task<ApiResponse<GetServiceResponse>> GetServicesRequestAsyncWithHttpInfo(string ebInstitutionId);
         /// <summary>
         /// Register a new Institution for Integration
         /// </summary>
@@ -144,7 +144,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="registerInstitutionRequest"> (optional)</param>
         /// <returns>Task of RegisterInstitutionResponse</returns>
-        System.Threading.Tasks.Task<RegisterInstitutionResponse> RegisterInstitutionAsync (RegisterInstitutionRequest registerInstitutionRequest = null);
+        System.Threading.Tasks.Task<RegisterInstitutionResponse> RegisterInstitutionAsync(RegisterInstitutionRequest registerInstitutionRequest = null);
 
         /// <summary>
         /// Register a new Institution for Integration
@@ -155,7 +155,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="registerInstitutionRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (RegisterInstitutionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RegisterInstitutionResponse>> RegisterInstitutionAsyncWithHttpInfo (RegisterInstitutionRequest registerInstitutionRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<RegisterInstitutionResponse>> RegisterInstitutionAsyncWithHttpInfo(RegisterInstitutionRequest registerInstitutionRequest = null);
         #endregion Asynchronous Operations
     }
 
@@ -216,7 +216,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -263,9 +263,9 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <param name="ebInstitutionId">The Education brands institution id</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns></returns>
-        public void DisableProductInstitutionIntegration (string ebInstitutionId, string ebProductId)
+        public void DisableProductInstitutionIntegration(string ebInstitutionId, string ebProductId)
         {
-             DisableProductInstitutionIntegrationWithHttpInfo(ebInstitutionId, ebProductId);
+            DisableProductInstitutionIntegrationWithHttpInfo(ebInstitutionId, ebProductId);
         }
 
         /// <summary>
@@ -275,7 +275,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <param name="ebInstitutionId">The Education brands institution id</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DisableProductInstitutionIntegrationWithHttpInfo (string ebInstitutionId, string ebProductId)
+        public ApiResponse<Object> DisableProductInstitutionIntegrationWithHttpInfo(string ebInstitutionId, string ebProductId)
         {
             // verify the required parameter 'ebInstitutionId' is set
             if (ebInstitutionId == null)
@@ -294,7 +294,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -311,13 +311,19 @@ namespace CB.IntegrationService.ApiClient.Api
             if (ebInstitutionId != null) localVarPathParams.Add("ebInstitutionId", Configuration.ApiClient.ParameterToString(ebInstitutionId)); // path parameter
             if (ebProductId != null) localVarPathParams.Add("ebProductId", Configuration.ApiClient.ParameterToString(ebProductId)); // path parameter
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -337,9 +343,9 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <param name="ebInstitutionId">The Education brands institution id</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DisableProductInstitutionIntegrationAsync (string ebInstitutionId, string ebProductId)
+        public async System.Threading.Tasks.Task DisableProductInstitutionIntegrationAsync(string ebInstitutionId, string ebProductId)
         {
-             await DisableProductInstitutionIntegrationAsyncWithHttpInfo(ebInstitutionId, ebProductId);
+            await DisableProductInstitutionIntegrationAsyncWithHttpInfo(ebInstitutionId, ebProductId);
 
         }
 
@@ -350,7 +356,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <param name="ebInstitutionId">The Education brands institution id</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DisableProductInstitutionIntegrationAsyncWithHttpInfo (string ebInstitutionId, string ebProductId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DisableProductInstitutionIntegrationAsyncWithHttpInfo(string ebInstitutionId, string ebProductId)
         {
             // verify the required parameter 'ebInstitutionId' is set
             if (ebInstitutionId == null)
@@ -369,7 +375,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -386,13 +392,19 @@ namespace CB.IntegrationService.ApiClient.Api
             if (ebInstitutionId != null) localVarPathParams.Add("ebInstitutionId", Configuration.ApiClient.ParameterToString(ebInstitutionId)); // path parameter
             if (ebProductId != null) localVarPathParams.Add("ebProductId", Configuration.ApiClient.ParameterToString(ebProductId)); // path parameter
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -411,10 +423,10 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ebInstitutionId">The Education brands institution id</param>
         /// <returns>GetServiceResponse</returns>
-        public GetServiceResponse GetServicesRequest (string ebInstitutionId)
+        public GetServiceResponse GetServicesRequest(string ebInstitutionId)
         {
-             ApiResponse<GetServiceResponse> localVarResponse = GetServicesRequestWithHttpInfo(ebInstitutionId);
-             return localVarResponse.Data;
+            ApiResponse<GetServiceResponse> localVarResponse = GetServicesRequestWithHttpInfo(ebInstitutionId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -423,7 +435,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ebInstitutionId">The Education brands institution id</param>
         /// <returns>ApiResponse of GetServiceResponse</returns>
-        public ApiResponse< GetServiceResponse > GetServicesRequestWithHttpInfo (string ebInstitutionId)
+        public ApiResponse<GetServiceResponse> GetServicesRequestWithHttpInfo(string ebInstitutionId)
         {
             // verify the required parameter 'ebInstitutionId' is set
             if (ebInstitutionId == null)
@@ -439,7 +451,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -455,13 +467,19 @@ namespace CB.IntegrationService.ApiClient.Api
 
             if (ebInstitutionId != null) localVarPathParams.Add("ebInstitutionId", Configuration.ApiClient.ParameterToString(ebInstitutionId)); // path parameter
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -471,7 +489,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             return new ApiResponse<GetServiceResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetServiceResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetServiceResponse)));
+                (GetServiceResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetServiceResponse)));
         }
 
         /// <summary>
@@ -480,10 +498,10 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ebInstitutionId">The Education brands institution id</param>
         /// <returns>Task of GetServiceResponse</returns>
-        public async System.Threading.Tasks.Task<GetServiceResponse> GetServicesRequestAsync (string ebInstitutionId)
+        public async System.Threading.Tasks.Task<GetServiceResponse> GetServicesRequestAsync(string ebInstitutionId)
         {
-             ApiResponse<GetServiceResponse> localVarResponse = await GetServicesRequestAsyncWithHttpInfo(ebInstitutionId);
-             return localVarResponse.Data;
+            ApiResponse<GetServiceResponse> localVarResponse = await GetServicesRequestAsyncWithHttpInfo(ebInstitutionId);
+            return localVarResponse.Data;
 
         }
 
@@ -493,7 +511,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ebInstitutionId">The Education brands institution id</param>
         /// <returns>Task of ApiResponse (GetServiceResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetServiceResponse>> GetServicesRequestAsyncWithHttpInfo (string ebInstitutionId)
+        public async System.Threading.Tasks.Task<ApiResponse<GetServiceResponse>> GetServicesRequestAsyncWithHttpInfo(string ebInstitutionId)
         {
             // verify the required parameter 'ebInstitutionId' is set
             if (ebInstitutionId == null)
@@ -509,7 +527,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -525,13 +543,19 @@ namespace CB.IntegrationService.ApiClient.Api
 
             if (ebInstitutionId != null) localVarPathParams.Add("ebInstitutionId", Configuration.ApiClient.ParameterToString(ebInstitutionId)); // path parameter
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -541,7 +565,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             return new ApiResponse<GetServiceResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GetServiceResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetServiceResponse)));
+                (GetServiceResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetServiceResponse)));
         }
 
         /// <summary>
@@ -550,10 +574,10 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="registerInstitutionRequest"> (optional)</param>
         /// <returns>RegisterInstitutionResponse</returns>
-        public RegisterInstitutionResponse RegisterInstitution (RegisterInstitutionRequest registerInstitutionRequest = null)
+        public RegisterInstitutionResponse RegisterInstitution(RegisterInstitutionRequest registerInstitutionRequest = null)
         {
-             ApiResponse<RegisterInstitutionResponse> localVarResponse = RegisterInstitutionWithHttpInfo(registerInstitutionRequest);
-             return localVarResponse.Data;
+            ApiResponse<RegisterInstitutionResponse> localVarResponse = RegisterInstitutionWithHttpInfo(registerInstitutionRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -562,7 +586,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="registerInstitutionRequest"> (optional)</param>
         /// <returns>ApiResponse of RegisterInstitutionResponse</returns>
-        public ApiResponse< RegisterInstitutionResponse > RegisterInstitutionWithHttpInfo (RegisterInstitutionRequest registerInstitutionRequest = null)
+        public ApiResponse<RegisterInstitutionResponse> RegisterInstitutionWithHttpInfo(RegisterInstitutionRequest registerInstitutionRequest = null)
         {
 
             var localVarPath = "/institutions";
@@ -575,7 +599,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -598,13 +622,19 @@ namespace CB.IntegrationService.ApiClient.Api
                 localVarPostBody = registerInstitutionRequest; // byte array
             }
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -614,7 +644,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             return new ApiResponse<RegisterInstitutionResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RegisterInstitutionResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RegisterInstitutionResponse)));
+                (RegisterInstitutionResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RegisterInstitutionResponse)));
         }
 
         /// <summary>
@@ -623,10 +653,10 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="registerInstitutionRequest"> (optional)</param>
         /// <returns>Task of RegisterInstitutionResponse</returns>
-        public async System.Threading.Tasks.Task<RegisterInstitutionResponse> RegisterInstitutionAsync (RegisterInstitutionRequest registerInstitutionRequest = null)
+        public async System.Threading.Tasks.Task<RegisterInstitutionResponse> RegisterInstitutionAsync(RegisterInstitutionRequest registerInstitutionRequest = null)
         {
-             ApiResponse<RegisterInstitutionResponse> localVarResponse = await RegisterInstitutionAsyncWithHttpInfo(registerInstitutionRequest);
-             return localVarResponse.Data;
+            ApiResponse<RegisterInstitutionResponse> localVarResponse = await RegisterInstitutionAsyncWithHttpInfo(registerInstitutionRequest);
+            return localVarResponse.Data;
 
         }
 
@@ -636,7 +666,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="registerInstitutionRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (RegisterInstitutionResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RegisterInstitutionResponse>> RegisterInstitutionAsyncWithHttpInfo (RegisterInstitutionRequest registerInstitutionRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<RegisterInstitutionResponse>> RegisterInstitutionAsyncWithHttpInfo(RegisterInstitutionRequest registerInstitutionRequest = null)
         {
 
             var localVarPath = "/institutions";
@@ -649,7 +679,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -672,13 +702,19 @@ namespace CB.IntegrationService.ApiClient.Api
                 localVarPostBody = registerInstitutionRequest; // byte array
             }
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -688,7 +724,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             return new ApiResponse<RegisterInstitutionResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RegisterInstitutionResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RegisterInstitutionResponse)));
+                (RegisterInstitutionResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RegisterInstitutionResponse)));
         }
 
     }

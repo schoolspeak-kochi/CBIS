@@ -50,7 +50,7 @@ namespace CB.IntegrationService.BLL
 
             try
             {
-                string token = MessageBroker.PublishEvent(productInformation, eventInfo, productNotificationRequestDTO);
+                string token = CbisQueue.PublishEvent(productInformation, eventInfo, productNotificationRequestDTO);
                 Logger.LogTrace("Publish event End");
                 return new PublishEventResponseDTO() { EbPublishedEventId = token };
             }

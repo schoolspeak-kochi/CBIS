@@ -57,8 +57,14 @@
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="RestSharp, Version=106.2.1.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.2.1\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -96,13 +102,13 @@
     <Compile Include="Controllers\DataExchangeController.cs" />
     <Compile Include="Controllers\InstitutionController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Controllers\ProductEndpointsController.cs" />
     <Compile Include="ActionResults\AuthenticationFailureResult.cs" />
     <Compile Include="Filters\IdentityBasicAuthentication.cs" />
     <Compile Include="Filters\IdentityBasicAuthenticationAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ProductEndpointsApi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +126,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CB.IntegrationService.ApiClient\CB.IntegrationService.ApiClient.csproj">
+      <Project>{cbc9001b-78af-4279-be2f-3cd5064ab082}</Project>
+      <Name>CB.IntegrationService.ApiClient</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CB.IntegrationService.ApiModels\CB.IntegrationService.ApiModels.csproj">
       <Project>{b6a4829d-35a6-427c-8b6b-04f31055af87}</Project>
       <Name>CB.IntegrationService.ApiModels</Name>

@@ -53,10 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\DataExchangeApi.cs" />
-    <Compile Include="Api\InstitutionApi.cs" />
-    <Compile Include="Api\ProductApi.cs" />
-    <Compile Include="Api\ProductEndpointsApi.cs" />
+    <Compile Include="DataExchangeApi.cs" />
+    <Compile Include="InstitutionApi.cs" />
+    <Compile Include="ProductApi.cs" />
     <Compile Include="Client\ApiClient.cs" />
     <Compile Include="Client\ApiException.cs" />
     <Compile Include="Client\ApiResponse.cs" />
