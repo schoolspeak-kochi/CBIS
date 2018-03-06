@@ -16,7 +16,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace CB.IntegrationService.ApiClient
+namespace CB.IntegrationService.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -351,7 +351,7 @@ namespace CB.IntegrationService.ApiClient
             // http basic authentication required
             if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
             {
-                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
             }
 
             // make the HTTP request
@@ -430,7 +430,7 @@ namespace CB.IntegrationService.ApiClient
             // http basic authentication required
             if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
             {
-                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
             }
 
             // make the HTTP request
@@ -508,7 +508,7 @@ namespace CB.IntegrationService.ApiClient
             // http basic authentication required
             if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
             {
-                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
             }
 
             // make the HTTP request
@@ -587,7 +587,7 @@ namespace CB.IntegrationService.ApiClient
             // http basic authentication required
             if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
             {
-                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
             }
 
             // make the HTTP request
@@ -666,7 +666,7 @@ namespace CB.IntegrationService.ApiClient
             // http basic authentication required
             if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
             {
-                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
             }
 
             // make the HTTP request
@@ -746,7 +746,7 @@ namespace CB.IntegrationService.ApiClient
             // http basic authentication required
             if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
             {
-                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
             }
 
             // make the HTTP request
@@ -824,7 +824,7 @@ namespace CB.IntegrationService.ApiClient
             // http basic authentication required
             if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
             {
-                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
             }
 
             // make the HTTP request
@@ -903,7 +903,7 @@ namespace CB.IntegrationService.ApiClient
             // http basic authentication required
             if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
             {
-                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+                localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
             }
 
             // make the HTTP request
