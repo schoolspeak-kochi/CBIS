@@ -12,7 +12,7 @@ using Amazon.SQS.Model;
 
 namespace CB.IntegrationService.BLL.Utils
 {
-    public class MessageBroker
+    public class CbisQueue
     {
         #region Private fields
         /// <summary>
@@ -27,9 +27,9 @@ namespace CB.IntegrationService.BLL.Utils
         #endregion Private fields
 
         /// <summary>
-        /// Initializes the <see cref="MessageBroker"/> class.
+        /// Initializes the <see cref="CbisQueue"/> class.
         /// </summary>
-        static MessageBroker()
+        static CbisQueue()
         {
             ARN_Table = new Dictionary<string, string>();
             publishedEventInformationDAL = new PublishedEventInformationDAL();

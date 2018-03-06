@@ -48,7 +48,7 @@ namespace CB.IntegrationService.BLL
 
             try
             {
-                string token = MessageBroker.PublishEvent(productInformation, eventInfo, productNotificationRequestDTO);
+                string token = CbisQueue.PublishEvent(productInformation, eventInfo, productNotificationRequestDTO);
                 return new PublishEventResponseDTO() { EbPublishedEventId = token };
             }
             catch (Exception ex)

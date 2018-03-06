@@ -87,7 +87,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\CBAuthorizationHandler.cs" />
     <Compile Include="Utils\EmailHelper.cs" />
-    <Compile Include="Utils\MessageBroker.cs" />
+    <Compile Include="Utils\CbisQueue.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CB.IntegrationService.DAL\CB.IntegrationService.DAL.csproj">

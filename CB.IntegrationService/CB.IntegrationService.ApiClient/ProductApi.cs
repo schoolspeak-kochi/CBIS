@@ -16,7 +16,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace CB.IntegrationService.ApiClient.Api
+namespace CB.IntegrationService.ApiClient
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -33,7 +33,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns></returns>
-        void DeRegisterProductById (string ebProductId);
+        void DeRegisterProductById(string ebProductId);
 
         /// <summary>
         /// De-register the product
@@ -44,7 +44,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeRegisterProductByIdWithHttpInfo (string ebProductId);
+        ApiResponse<Object> DeRegisterProductByIdWithHttpInfo(string ebProductId);
         /// <summary>
         /// Get a product by EB Id
         /// </summary>
@@ -52,10 +52,9 @@ namespace CB.IntegrationService.ApiClient.Api
         /// Gets the details of a product by its Ebucation Brands Id
         /// </remarks>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns>Product</returns>
-        Product GetProductById (string authorization, string ebProductId);
+        Product GetProductById(string ebProductId);
 
         /// <summary>
         /// Get a product by EB Id
@@ -64,10 +63,9 @@ namespace CB.IntegrationService.ApiClient.Api
         /// Gets the details of a product by its Ebucation Brands Id
         /// </remarks>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns>ApiResponse of Product</returns>
-        ApiResponse<Product> GetProductByIdWithHttpInfo (string authorization, string ebProductId);
+        ApiResponse<Product> GetProductByIdWithHttpInfo(string ebProductId);
         /// <summary>
         /// Get list of EB products
         /// </summary>
@@ -75,9 +73,8 @@ namespace CB.IntegrationService.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <returns>List&lt;Product&gt;</returns>
-        List<Product> GetProducts (string authorization);
+        List<Product> GetProducts();
 
         /// <summary>
         /// Get list of EB products
@@ -86,9 +83,8 @@ namespace CB.IntegrationService.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <returns>ApiResponse of List&lt;Product&gt;</returns>
-        ApiResponse<List<Product>> GetProductsWithHttpInfo (string authorization);
+        ApiResponse<List<Product>> GetProductsWithHttpInfo();
         /// <summary>
         /// Register a new product
         /// </summary>
@@ -96,10 +92,9 @@ namespace CB.IntegrationService.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="registerProductRequest"> (optional)</param>
         /// <returns>RegisterProductResponse</returns>
-        RegisterProductResponse PostProduct (string authorization, Product registerProductRequest = null);
+        RegisterProductResponse PostProduct(Product registerProductRequest = null);
 
         /// <summary>
         /// Register a new product
@@ -108,10 +103,9 @@ namespace CB.IntegrationService.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="registerProductRequest"> (optional)</param>
         /// <returns>ApiResponse of RegisterProductResponse</returns>
-        ApiResponse<RegisterProductResponse> PostProductWithHttpInfo (string authorization, Product registerProductRequest = null);
+        ApiResponse<RegisterProductResponse> PostProductWithHttpInfo(Product registerProductRequest = null);
         /// <summary>
         /// Update a product by EB Id
         /// </summary>
@@ -119,12 +113,11 @@ namespace CB.IntegrationService.ApiClient.Api
         /// Updates the details of a product by its Ebucation Brands Id
         /// </remarks>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="contentType">The Content type.</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <param name="product">The updated product object</param>
         /// <returns>Product</returns>
-        Product UpdateProductById (string authorization, string contentType, string ebProductId, Product product);
+        Product UpdateProductById(string contentType, string ebProductId, Product product);
 
         /// <summary>
         /// Update a product by EB Id
@@ -133,12 +126,11 @@ namespace CB.IntegrationService.ApiClient.Api
         /// Updates the details of a product by its Ebucation Brands Id
         /// </remarks>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="contentType">The Content type.</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <param name="product">The updated product object</param>
         /// <returns>ApiResponse of Product</returns>
-        ApiResponse<Product> UpdateProductByIdWithHttpInfo (string authorization, string contentType, string ebProductId, Product product);
+        ApiResponse<Product> UpdateProductByIdWithHttpInfo(string contentType, string ebProductId, Product product);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -150,7 +142,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeRegisterProductByIdAsync (string ebProductId);
+        System.Threading.Tasks.Task DeRegisterProductByIdAsync(string ebProductId);
 
         /// <summary>
         /// De-register the product
@@ -161,7 +153,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeRegisterProductByIdAsyncWithHttpInfo (string ebProductId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeRegisterProductByIdAsyncWithHttpInfo(string ebProductId);
         /// <summary>
         /// Get a product by EB Id
         /// </summary>
@@ -169,10 +161,9 @@ namespace CB.IntegrationService.ApiClient.Api
         /// Gets the details of a product by its Ebucation Brands Id
         /// </remarks>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns>Task of Product</returns>
-        System.Threading.Tasks.Task<Product> GetProductByIdAsync (string authorization, string ebProductId);
+        System.Threading.Tasks.Task<Product> GetProductByIdAsync(string ebProductId);
 
         /// <summary>
         /// Get a product by EB Id
@@ -181,10 +172,9 @@ namespace CB.IntegrationService.ApiClient.Api
         /// Gets the details of a product by its Ebucation Brands Id
         /// </remarks>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns>Task of ApiResponse (Product)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Product>> GetProductByIdAsyncWithHttpInfo (string authorization, string ebProductId);
+        System.Threading.Tasks.Task<ApiResponse<Product>> GetProductByIdAsyncWithHttpInfo(string ebProductId);
         /// <summary>
         /// Get list of EB products
         /// </summary>
@@ -192,9 +182,8 @@ namespace CB.IntegrationService.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <returns>Task of List&lt;Product&gt;</returns>
-        System.Threading.Tasks.Task<List<Product>> GetProductsAsync (string authorization);
+        System.Threading.Tasks.Task<List<Product>> GetProductsAsync();
 
         /// <summary>
         /// Get list of EB products
@@ -203,9 +192,8 @@ namespace CB.IntegrationService.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <returns>Task of ApiResponse (List&lt;Product&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Product>>> GetProductsAsyncWithHttpInfo (string authorization);
+        System.Threading.Tasks.Task<ApiResponse<List<Product>>> GetProductsAsyncWithHttpInfo();
         /// <summary>
         /// Register a new product
         /// </summary>
@@ -213,10 +201,9 @@ namespace CB.IntegrationService.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="registerProductRequest"> (optional)</param>
         /// <returns>Task of RegisterProductResponse</returns>
-        System.Threading.Tasks.Task<RegisterProductResponse> PostProductAsync (string authorization, Product registerProductRequest = null);
+        System.Threading.Tasks.Task<RegisterProductResponse> PostProductAsync(Product registerProductRequest = null);
 
         /// <summary>
         /// Register a new product
@@ -225,10 +212,9 @@ namespace CB.IntegrationService.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="registerProductRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (RegisterProductResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RegisterProductResponse>> PostProductAsyncWithHttpInfo (string authorization, Product registerProductRequest = null);
+        System.Threading.Tasks.Task<ApiResponse<RegisterProductResponse>> PostProductAsyncWithHttpInfo(Product registerProductRequest = null);
         /// <summary>
         /// Update a product by EB Id
         /// </summary>
@@ -236,12 +222,11 @@ namespace CB.IntegrationService.ApiClient.Api
         /// Updates the details of a product by its Ebucation Brands Id
         /// </remarks>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="contentType">The Content type.</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <param name="product">The updated product object</param>
         /// <returns>Task of Product</returns>
-        System.Threading.Tasks.Task<Product> UpdateProductByIdAsync (string authorization, string contentType, string ebProductId, Product product);
+        System.Threading.Tasks.Task<Product> UpdateProductByIdAsync(string contentType, string ebProductId, Product product);
 
         /// <summary>
         /// Update a product by EB Id
@@ -250,12 +235,11 @@ namespace CB.IntegrationService.ApiClient.Api
         /// Updates the details of a product by its Ebucation Brands Id
         /// </remarks>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="contentType">The Content type.</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <param name="product">The updated product object</param>
         /// <returns>Task of ApiResponse (Product)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Product>> UpdateProductByIdAsyncWithHttpInfo (string authorization, string contentType, string ebProductId, Product product);
+        System.Threading.Tasks.Task<ApiResponse<Product>> UpdateProductByIdAsyncWithHttpInfo(string contentType, string ebProductId, Product product);
         #endregion Asynchronous Operations
     }
 
@@ -316,7 +300,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -362,9 +346,9 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns></returns>
-        public void DeRegisterProductById (string ebProductId)
+        public void DeRegisterProductById(string ebProductId)
         {
-             DeRegisterProductByIdWithHttpInfo(ebProductId);
+            DeRegisterProductByIdWithHttpInfo(ebProductId);
         }
 
         /// <summary>
@@ -373,7 +357,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeRegisterProductByIdWithHttpInfo (string ebProductId)
+        public ApiResponse<Object> DeRegisterProductByIdWithHttpInfo(string ebProductId)
         {
             // verify the required parameter 'ebProductId' is set
             if (ebProductId == null)
@@ -389,7 +373,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -405,13 +389,19 @@ namespace CB.IntegrationService.ApiClient.Api
 
             if (ebProductId != null) localVarPathParams.Add("ebProductId", Configuration.ApiClient.ParameterToString(ebProductId)); // path parameter
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -430,9 +420,9 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeRegisterProductByIdAsync (string ebProductId)
+        public async System.Threading.Tasks.Task DeRegisterProductByIdAsync(string ebProductId)
         {
-             await DeRegisterProductByIdAsyncWithHttpInfo(ebProductId);
+            await DeRegisterProductByIdAsyncWithHttpInfo(ebProductId);
 
         }
 
@@ -442,7 +432,7 @@ namespace CB.IntegrationService.ApiClient.Api
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeRegisterProductByIdAsyncWithHttpInfo (string ebProductId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeRegisterProductByIdAsyncWithHttpInfo(string ebProductId)
         {
             // verify the required parameter 'ebProductId' is set
             if (ebProductId == null)
@@ -458,7 +448,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -474,13 +464,19 @@ namespace CB.IntegrationService.ApiClient.Api
 
             if (ebProductId != null) localVarPathParams.Add("ebProductId", Configuration.ApiClient.ParameterToString(ebProductId)); // path parameter
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -497,27 +493,22 @@ namespace CB.IntegrationService.ApiClient.Api
         /// Get a product by EB Id Gets the details of a product by its Ebucation Brands Id
         /// </summary>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns>Product</returns>
-        public Product GetProductById (string authorization, string ebProductId)
+        public Product GetProductById(string ebProductId)
         {
-             ApiResponse<Product> localVarResponse = GetProductByIdWithHttpInfo(authorization, ebProductId);
-             return localVarResponse.Data;
+            ApiResponse<Product> localVarResponse = GetProductByIdWithHttpInfo(ebProductId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get a product by EB Id Gets the details of a product by its Ebucation Brands Id
         /// </summary>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns>ApiResponse of Product</returns>
-        public ApiResponse< Product > GetProductByIdWithHttpInfo (string authorization, string ebProductId)
+        public ApiResponse<Product> GetProductByIdWithHttpInfo(string ebProductId)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling ProductApi->GetProductById");
             // verify the required parameter 'ebProductId' is set
             if (ebProductId == null)
                 throw new ApiException(400, "Missing required parameter 'ebProductId' when calling ProductApi->GetProductById");
@@ -532,7 +523,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -547,15 +538,20 @@ namespace CB.IntegrationService.ApiClient.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (ebProductId != null) localVarPathParams.Add("ebProductId", Configuration.ApiClient.ParameterToString(ebProductId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -565,20 +561,19 @@ namespace CB.IntegrationService.ApiClient.Api
 
             return new ApiResponse<Product>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Product) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Product)));
+                (Product)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Product)));
         }
 
         /// <summary>
         /// Get a product by EB Id Gets the details of a product by its Ebucation Brands Id
         /// </summary>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns>Task of Product</returns>
-        public async System.Threading.Tasks.Task<Product> GetProductByIdAsync (string authorization, string ebProductId)
+        public async System.Threading.Tasks.Task<Product> GetProductByIdAsync(string ebProductId)
         {
-             ApiResponse<Product> localVarResponse = await GetProductByIdAsyncWithHttpInfo(authorization, ebProductId);
-             return localVarResponse.Data;
+            ApiResponse<Product> localVarResponse = await GetProductByIdAsyncWithHttpInfo(ebProductId);
+            return localVarResponse.Data;
 
         }
 
@@ -586,14 +581,10 @@ namespace CB.IntegrationService.ApiClient.Api
         /// Get a product by EB Id Gets the details of a product by its Ebucation Brands Id
         /// </summary>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <returns>Task of ApiResponse (Product)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Product>> GetProductByIdAsyncWithHttpInfo (string authorization, string ebProductId)
+        public async System.Threading.Tasks.Task<ApiResponse<Product>> GetProductByIdAsyncWithHttpInfo(string ebProductId)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling ProductApi->GetProductById");
             // verify the required parameter 'ebProductId' is set
             if (ebProductId == null)
                 throw new ApiException(400, "Missing required parameter 'ebProductId' when calling ProductApi->GetProductById");
@@ -608,7 +599,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -623,15 +614,20 @@ namespace CB.IntegrationService.ApiClient.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (ebProductId != null) localVarPathParams.Add("ebProductId", Configuration.ApiClient.ParameterToString(ebProductId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -641,32 +637,27 @@ namespace CB.IntegrationService.ApiClient.Api
 
             return new ApiResponse<Product>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Product) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Product)));
+                (Product)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Product)));
         }
 
         /// <summary>
         /// Get list of EB products 
         /// </summary>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <returns>List&lt;Product&gt;</returns>
-        public List<Product> GetProducts (string authorization)
+        public List<Product> GetProducts()
         {
-             ApiResponse<List<Product>> localVarResponse = GetProductsWithHttpInfo(authorization);
-             return localVarResponse.Data;
+            ApiResponse<List<Product>> localVarResponse = GetProductsWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
         /// Get list of EB products 
         /// </summary>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <returns>ApiResponse of List&lt;Product&gt;</returns>
-        public ApiResponse< List<Product> > GetProductsWithHttpInfo (string authorization)
+        public ApiResponse<List<Product>> GetProductsWithHttpInfo()
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling ProductApi->GetProducts");
 
             var localVarPath = "/products";
             var localVarPathParams = new Dictionary<String, String>();
@@ -678,7 +669,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -692,15 +683,20 @@ namespace CB.IntegrationService.ApiClient.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -710,19 +706,18 @@ namespace CB.IntegrationService.ApiClient.Api
 
             return new ApiResponse<List<Product>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<Product>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Product>)));
+                (List<Product>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Product>)));
         }
 
         /// <summary>
         /// Get list of EB products 
         /// </summary>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <returns>Task of List&lt;Product&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Product>> GetProductsAsync (string authorization)
+        public async System.Threading.Tasks.Task<List<Product>> GetProductsAsync()
         {
-             ApiResponse<List<Product>> localVarResponse = await GetProductsAsyncWithHttpInfo(authorization);
-             return localVarResponse.Data;
+            ApiResponse<List<Product>> localVarResponse = await GetProductsAsyncWithHttpInfo();
+            return localVarResponse.Data;
 
         }
 
@@ -730,13 +725,9 @@ namespace CB.IntegrationService.ApiClient.Api
         /// Get list of EB products 
         /// </summary>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <returns>Task of ApiResponse (List&lt;Product&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<Product>>> GetProductsAsyncWithHttpInfo (string authorization)
+        public async System.Threading.Tasks.Task<ApiResponse<List<Product>>> GetProductsAsyncWithHttpInfo()
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling ProductApi->GetProducts");
 
             var localVarPath = "/products";
             var localVarPathParams = new Dictionary<String, String>();
@@ -748,7 +739,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -762,15 +753,20 @@ namespace CB.IntegrationService.ApiClient.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -780,34 +776,29 @@ namespace CB.IntegrationService.ApiClient.Api
 
             return new ApiResponse<List<Product>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<Product>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Product>)));
+                (List<Product>)Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Product>)));
         }
 
         /// <summary>
         /// Register a new product 
         /// </summary>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="registerProductRequest"> (optional)</param>
         /// <returns>RegisterProductResponse</returns>
-        public RegisterProductResponse PostProduct (string authorization, Product registerProductRequest = null)
+        public RegisterProductResponse PostProduct(Product registerProductRequest = null)
         {
-             ApiResponse<RegisterProductResponse> localVarResponse = PostProductWithHttpInfo(authorization, registerProductRequest);
-             return localVarResponse.Data;
+            ApiResponse<RegisterProductResponse> localVarResponse = PostProductWithHttpInfo(registerProductRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         /// Register a new product 
         /// </summary>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="registerProductRequest"> (optional)</param>
         /// <returns>ApiResponse of RegisterProductResponse</returns>
-        public ApiResponse< RegisterProductResponse > PostProductWithHttpInfo (string authorization, Product registerProductRequest = null)
+        public ApiResponse<RegisterProductResponse> PostProductWithHttpInfo(Product registerProductRequest = null)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling ProductApi->PostProduct");
 
             var localVarPath = "/products";
             var localVarPathParams = new Dictionary<String, String>();
@@ -819,7 +810,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -833,7 +824,6 @@ namespace CB.IntegrationService.ApiClient.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
             if (registerProductRequest != null && registerProductRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(registerProductRequest); // http body (model) parameter
@@ -843,13 +833,19 @@ namespace CB.IntegrationService.ApiClient.Api
                 localVarPostBody = registerProductRequest; // byte array
             }
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -859,20 +855,19 @@ namespace CB.IntegrationService.ApiClient.Api
 
             return new ApiResponse<RegisterProductResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RegisterProductResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RegisterProductResponse)));
+                (RegisterProductResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RegisterProductResponse)));
         }
 
         /// <summary>
         /// Register a new product 
         /// </summary>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="registerProductRequest"> (optional)</param>
         /// <returns>Task of RegisterProductResponse</returns>
-        public async System.Threading.Tasks.Task<RegisterProductResponse> PostProductAsync (string authorization, Product registerProductRequest = null)
+        public async System.Threading.Tasks.Task<RegisterProductResponse> PostProductAsync(Product registerProductRequest = null)
         {
-             ApiResponse<RegisterProductResponse> localVarResponse = await PostProductAsyncWithHttpInfo(authorization, registerProductRequest);
-             return localVarResponse.Data;
+            ApiResponse<RegisterProductResponse> localVarResponse = await PostProductAsyncWithHttpInfo(registerProductRequest);
+            return localVarResponse.Data;
 
         }
 
@@ -880,14 +875,10 @@ namespace CB.IntegrationService.ApiClient.Api
         /// Register a new product 
         /// </summary>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="registerProductRequest"> (optional)</param>
         /// <returns>Task of ApiResponse (RegisterProductResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RegisterProductResponse>> PostProductAsyncWithHttpInfo (string authorization, Product registerProductRequest = null)
+        public async System.Threading.Tasks.Task<ApiResponse<RegisterProductResponse>> PostProductAsyncWithHttpInfo(Product registerProductRequest = null)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling ProductApi->PostProduct");
 
             var localVarPath = "/products";
             var localVarPathParams = new Dictionary<String, String>();
@@ -899,7 +890,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -913,7 +904,6 @@ namespace CB.IntegrationService.ApiClient.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
             if (registerProductRequest != null && registerProductRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(registerProductRequest); // http body (model) parameter
@@ -923,13 +913,19 @@ namespace CB.IntegrationService.ApiClient.Api
                 localVarPostBody = registerProductRequest; // byte array
             }
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -939,38 +935,33 @@ namespace CB.IntegrationService.ApiClient.Api
 
             return new ApiResponse<RegisterProductResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (RegisterProductResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RegisterProductResponse)));
+                (RegisterProductResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(RegisterProductResponse)));
         }
 
         /// <summary>
         /// Update a product by EB Id Updates the details of a product by its Ebucation Brands Id
         /// </summary>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="contentType">The Content type.</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <param name="product">The updated product object</param>
         /// <returns>Product</returns>
-        public Product UpdateProductById (string authorization, string contentType, string ebProductId, Product product)
+        public Product UpdateProductById(string contentType, string ebProductId, Product product)
         {
-             ApiResponse<Product> localVarResponse = UpdateProductByIdWithHttpInfo(authorization, contentType, ebProductId, product);
-             return localVarResponse.Data;
+            ApiResponse<Product> localVarResponse = UpdateProductByIdWithHttpInfo(contentType, ebProductId, product);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         /// Update a product by EB Id Updates the details of a product by its Ebucation Brands Id
         /// </summary>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="contentType">The Content type.</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <param name="product">The updated product object</param>
         /// <returns>ApiResponse of Product</returns>
-        public ApiResponse< Product > UpdateProductByIdWithHttpInfo (string authorization, string contentType, string ebProductId, Product product)
+        public ApiResponse<Product> UpdateProductByIdWithHttpInfo(string contentType, string ebProductId, Product product)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling ProductApi->UpdateProductById");
             // verify the required parameter 'contentType' is set
             if (contentType == null)
                 throw new ApiException(400, "Missing required parameter 'contentType' when calling ProductApi->UpdateProductById");
@@ -991,7 +982,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -1006,7 +997,6 @@ namespace CB.IntegrationService.ApiClient.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (ebProductId != null) localVarPathParams.Add("ebProductId", Configuration.ApiClient.ParameterToString(ebProductId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
             if (contentType != null) localVarHeaderParams.Add("Content-Type", Configuration.ApiClient.ParameterToString(contentType)); // header parameter
             if (product != null && product.GetType() != typeof(byte[]))
             {
@@ -1017,13 +1007,19 @@ namespace CB.IntegrationService.ApiClient.Api
                 localVarPostBody = product; // byte array
             }
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)Configuration.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1033,22 +1029,21 @@ namespace CB.IntegrationService.ApiClient.Api
 
             return new ApiResponse<Product>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Product) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Product)));
+                (Product)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Product)));
         }
 
         /// <summary>
         /// Update a product by EB Id Updates the details of a product by its Ebucation Brands Id
         /// </summary>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="contentType">The Content type.</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <param name="product">The updated product object</param>
         /// <returns>Task of Product</returns>
-        public async System.Threading.Tasks.Task<Product> UpdateProductByIdAsync (string authorization, string contentType, string ebProductId, Product product)
+        public async System.Threading.Tasks.Task<Product> UpdateProductByIdAsync(string contentType, string ebProductId, Product product)
         {
-             ApiResponse<Product> localVarResponse = await UpdateProductByIdAsyncWithHttpInfo(authorization, contentType, ebProductId, product);
-             return localVarResponse.Data;
+            ApiResponse<Product> localVarResponse = await UpdateProductByIdAsyncWithHttpInfo(contentType, ebProductId, product);
+            return localVarResponse.Data;
 
         }
 
@@ -1056,16 +1051,12 @@ namespace CB.IntegrationService.ApiClient.Api
         /// Update a product by EB Id Updates the details of a product by its Ebucation Brands Id
         /// </summary>
         /// <exception cref="CB.IntegrationService.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization header for authentication.  The syntax is &lt;b&gt;Authorization: &amp;lt;type&amp;gt; &amp;lt;credentials&amp;gt;&lt;/b&gt;;  &lt;i&gt;where type&#x3D;&lt;b&gt;Basic&lt;/b&gt; and credentials&#x3D; base64 encoding of &lt;b&gt;&amp;lt;username&amp;gt;:&amp;lt;secretKey&amp;gt;&lt;/b&gt;&lt;/i&gt;</param>
         /// <param name="contentType">The Content type.</param>
         /// <param name="ebProductId">The Education brands product id</param>
         /// <param name="product">The updated product object</param>
         /// <returns>Task of ApiResponse (Product)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Product>> UpdateProductByIdAsyncWithHttpInfo (string authorization, string contentType, string ebProductId, Product product)
+        public async System.Threading.Tasks.Task<ApiResponse<Product>> UpdateProductByIdAsyncWithHttpInfo(string contentType, string ebProductId, Product product)
         {
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling ProductApi->UpdateProductById");
             // verify the required parameter 'contentType' is set
             if (contentType == null)
                 throw new ApiException(400, "Missing required parameter 'contentType' when calling ProductApi->UpdateProductById");
@@ -1086,7 +1077,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
+                "application/json",
                 "application/xml"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
@@ -1101,7 +1092,6 @@ namespace CB.IntegrationService.ApiClient.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (ebProductId != null) localVarPathParams.Add("ebProductId", Configuration.ApiClient.ParameterToString(ebProductId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
             if (contentType != null) localVarHeaderParams.Add("Content-Type", Configuration.ApiClient.ParameterToString(contentType)); // header parameter
             if (product != null && product.GetType() != typeof(byte[]))
             {
@@ -1112,13 +1102,19 @@ namespace CB.IntegrationService.ApiClient.Api
                 localVarPostBody = product; // byte array
             }
 
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(Configuration.Username) || !String.IsNullOrEmpty(Configuration.Password))
+            {
+                localVarHeaderParams["Authorization"] = "Basic " + Client.ApiClient.Base64Encode(Configuration.Username + ":" + Configuration.Password);
+            }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1128,7 +1124,7 @@ namespace CB.IntegrationService.ApiClient.Api
 
             return new ApiResponse<Product>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Product) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Product)));
+                (Product)Configuration.ApiClient.Deserialize(localVarResponse, typeof(Product)));
         }
 
     }
