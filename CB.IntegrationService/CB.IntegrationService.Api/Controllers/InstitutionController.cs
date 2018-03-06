@@ -28,8 +28,10 @@ using System.Web.Http;
 namespace CommunityBrands.IntegrationService.Api.Controllers
 {
     /// <summary>
-    /// 
+    /// Defines the institution Api controller
     /// </summary>
+    [CB.IntegrationService.Api.Filters.IdentityBasicAuthentication]
+    [Authorize]
     public class InstitutionController : ApiController
     { 
         /// <summary>

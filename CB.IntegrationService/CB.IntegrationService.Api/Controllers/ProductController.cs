@@ -28,8 +28,10 @@ using System.Web.Http;
 namespace CommunityBrands.IntegrationService.Api.Controllers
 {
     /// <summary>
-    /// 
-    /// </summary>    
+    /// Defines the product Api controller
+    /// </summary>
+    [CB.IntegrationService.Api.Filters.IdentityBasicAuthentication]
+    [Authorize]
     public class ProductController : ApiController
     { 
         /// <summary>

@@ -34,8 +34,10 @@ using CB.IntegrationService.Models.Exceptions;
 namespace CommunityBrands.IntegrationService.Api.Controllers
 {
     /// <summary>
-    /// 
+    /// Defines the data exchange Api controller
     /// </summary>
+    [CB.IntegrationService.Api.Filters.IdentityBasicAuthentication]
+    [Authorize]
     public class DataExchangeController : ApiController
     { 
         /// <summary>
