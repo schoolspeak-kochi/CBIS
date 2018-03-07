@@ -39,3 +39,5 @@ CB.IntegrationService/.vs/CB.IntegrationService/v15/sqlite3/storage.ide
 .vs/slnx.sqlite
 .vs/VSWorkspaceState.json
 /CB.IntegrationService/CB.IntegrationService.Api/Logs
+/CB.IntegrationService/.vs/config/applicationhost.config
+*.csproj.user
