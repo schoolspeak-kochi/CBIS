@@ -30,6 +30,7 @@ using CB.IntegrationService.BLL.Utils;
 using AutoMapper;
 using CB.IntegrationService.Utils;
 using CB.IntegrationService.Models.Exceptions;
+using CB.IntegrationService.Models.DTO;
 
 namespace CommunityBrands.IntegrationService.Api.Controllers
 {
