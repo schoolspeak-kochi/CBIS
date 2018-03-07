@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CB.IntegrationService.Models;
 using CB.IntegrationService.ApiModels;
+using CB.IntegrationService.Models.DTO;
 
 namespace CB.IntegrationService.BLL.Utils
 {

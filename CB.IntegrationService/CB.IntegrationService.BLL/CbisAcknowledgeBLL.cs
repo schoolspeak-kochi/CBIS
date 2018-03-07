@@ -1,5 +1,6 @@
 ﻿using CB.IntegrationService.DAL;
 using CB.IntegrationService.Models;
+using CB.IntegrationService.Models.DTO;
 using CB.IntegrationService.Models.Exceptions;
 using CB.IntegrationService.Utils;
 using System;

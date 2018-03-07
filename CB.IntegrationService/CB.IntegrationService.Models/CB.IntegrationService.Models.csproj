@@ -46,12 +46,12 @@
     <Compile Include="Exceptions\EventException.cs" />
     <Compile Include="Exceptions\HttpConnectionException.cs" />
     <Compile Include="Exceptions\ProductException.cs" />
-    <Compile Include="NotificationAcknowledgeRequestDTO.cs" />
+    <Compile Include="DTO\NotificationAcknowledgeRequestDTO.cs" />
     <Compile Include="ProductInformation.cs" />
-    <Compile Include="ProductNotificationRequestDTO.cs" />
+    <Compile Include="DTO\ProductNotificationRequestDTO.cs" />
     <Compile Include="PublishedEventInformation.cs" />
-    <Compile Include="PublishEventRequestDTO.cs" />
-    <Compile Include="PublishEventResponseDTO.cs" />
+    <Compile Include="DTO\PublishEventRequestDTO.cs" />
+    <Compile Include="DTO\PublishEventResponseDTO.cs" />
     <Compile Include="QueuedEventInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

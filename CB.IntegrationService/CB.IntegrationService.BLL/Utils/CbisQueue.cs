@@ -10,6 +10,7 @@ using CB.IntegrationService.Utils;
 using CB.IntegrationService.DAL.Data;
 using Amazon.SQS.Model;
 using CB.IntegrationService.Models.Exceptions;
+using CB.IntegrationService.Models.DTO;
 
 namespace CB.IntegrationService.BLL.Utils
 {
